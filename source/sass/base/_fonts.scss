@@ -1,0 +1,10 @@
+@font-face {
+  font-weight: FONT_WEIGHT;
+  font-style: FONT_STYLE;
+  font-family: FONT_FAMILY;
+  font-display: swap;
+
+  src:
+    url("../fonts/FONT_NAME.woff2") format("woff2"),
+    url("../fonts/FONT_NAME.woff") format("woff");
+}

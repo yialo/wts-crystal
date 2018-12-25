@@ -1,0 +1,23 @@
+@mixin font($fontWeight: VALUE, $fontSize: VALUE, $lineHeight: VALUE) {
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-family: FONT_FAMILY_NAME;
+}
+
+@mixin margin-hor($marginHorizontal: auto) {
+  margin-left: $marginHorizontal;
+  margin-right: $marginHorizontal;
+}
+
+@mixin list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+@mixin outline {
+  outline: 1px solid green;
+  outline-offset: -1px;
+}
