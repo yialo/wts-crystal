@@ -1,10 +1,18 @@
-@font-face {
-  font-weight: FONT_WEIGHT;
-  font-style: FONT_STYLE;
-  font-family: FONT_FAMILY;
-  font-display: swap;
+$font-weight-stack: (
+  ("gothampro-regular", 400),
+  ("gothampro-medium", 500),
+  ("gothampro-bold", 700)
+);
 
-  src:
-    url("../fonts/FONT_NAME.woff2") format("woff2"),
-    url("../fonts/FONT_NAME.woff") format("woff");
+@each $fontSubtype, $fontWeight in $font-weight-stack {
+  @font-face {
+    font-weight: $fontWeight;
+    font-style: normal;
+    font-family: "Gotham Pro";
+    font-display: swap;
+
+    src:
+      url("../fonts/#{$fontSubtype}.woff2") format("woff2"),
+      url("../fonts/#{$fontSubtype}.woff") format("woff");
+  }
 }

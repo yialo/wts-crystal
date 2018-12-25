@@ -1,8 +1,8 @@
-@mixin font($fontWeight: VALUE, $fontSize: VALUE, $lineHeight: VALUE) {
+@mixin font($fontWeight: 400, $fontSize: 20px, $lineHeight: 27px) {
   font-weight: $fontWeight;
   font-size: $fontSize;
   line-height: $lineHeight;
-  font-family: FONT_FAMILY_NAME;
+  font-family: "Gotham Pro", "Arial", sans-serif;
 }
 
 @mixin margin-hor($marginHorizontal: auto) {
