@@ -8,6 +8,7 @@
     'medium',
     'bold'
   ];
+  var mainElement = 'crystal---page-main__';
 
 block variables
 
@@ -28,7 +29,7 @@ html(lang='ru')
     link(rel='stylesheet' href='css/main.min.css')
   body.crystal---page
     header.crystal---page-header.crystal---page__header
-      .crystal---page-header__container
+      .crystal---page-header__container.aligner
         ul.crystal---page-header__list
           li.crystal---page-header__item UI / UX
           li.crystal---page-header__item 2018
@@ -41,9 +42,9 @@ html(lang='ru')
             alt='Столичная водка'
           )
           h1.crystal---visually-hidden Столичная водка
-    main.crystal---page-main.page__main
+    main.crystal---page-main.crystal---page__main
       block page-main
-    footer.crystal---page-footer.page__footer
-      p.crystal---visually-hidden Спасибо за просмотр
+    footer.crystal---page-footer.crystal---page__footer
+      p.crystal---page-footer__legend Спасибо за просмотр
     script(src='js/picturefill.js')
     block scripts

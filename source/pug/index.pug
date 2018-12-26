@@ -2,19 +2,44 @@ extends common/_t_default.pug
 
 block page-main
   +crystal---textblock({
-    mixedClasses: 'page-main__taks',
+    mixedClasses: `${mainElement}taks`,
     modifier: 'task',
     heading: 'Задача',
     dataSource: crystalTextblockTask
   })
+  +crystal---picture-block({
+    mixedClasses: `${mainElement}primary`,
+    modifier: 'primary',
+    heading: 'Главная'
+  })
+  +crystal---picture-block({
+    mixedClasses: `${mainElement}magazine`,
+    modifier: 'magazine',
+    heading: 'Журнал'
+  })
+  +crystal---picture-block({
+    mixedClasses: `${mainElement}manner`,
+    modifier: 'manner',
+    heading: 'Как и с кем'
+  })
   +crystal---textblock({
-    mixedClasses: 'page-main__design',
+    mixedClasses: `${mainElement}design`,
     modifier: 'design',
     heading: 'Проектирование и дизайн интерфейса',
     dataSource: crystalTextblockDesign
   })
+  +crystal---picture-block({
+    mixedClasses: `${mainElement}stories`,
+    modifier: 'stories',
+    heading: 'Сто личных историй'
+  })
+  +crystal---picture-block({
+    mixedClasses: `${mainElement}history`,
+    modifier: 'history',
+    heading: 'Историй'
+  })
   +crystal---textblock({
-    mixedClasses: 'page-main__development',
+    mixedClasses: `${mainElement}development`,
     modifier: 'development',
     heading: 'Зазработка',
     dataSource: crystalTextblockDevelopment
