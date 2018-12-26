@@ -37,10 +37,15 @@ html(lang='ru')
             span.crystal---page-header__string WayToStart
             = ' studio'
         .crystal---logo.crystal---page-header__logo
-          img.crystal---logo__image(
-            src='img/logo@300.png'
-            alt='Столичная водка'
-          )
+          picture.crystal---logo__image-wrapper
+            source(
+              media=viewportMediumMinWidth
+              srcset='img/logo@388.png'
+            )
+            img.crystal---logo__image(
+              src='img/logo@300.png'
+              alt='Столичная водка'
+            )
           h1.crystal---visually-hidden Столичная водка
     main.crystal---page-main.crystal---page__main
       block page-main
