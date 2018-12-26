@@ -1,0 +1,14 @@
+.crystal---textblock__heading {
+  @include margin-hor;
+  @include font(700, 40px, 48px);
+  margin-bottom: 30px;
+  color: $red;
+}
+
+.crystal---textblock__paragraph {
+  @include margin-hor;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}

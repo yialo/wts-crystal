@@ -1,0 +1,18 @@
+.crystal---page-header {
+  background-color: $palegreen;
+}
+
+.crystal---page-header__list {
+  @include list;
+}
+
+.crystal---page-header__item {
+  @include font(400, 16px, 16px);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+}
+
+.crystal---page-header__string {
+  font-weight: 700;
+}

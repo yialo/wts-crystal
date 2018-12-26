@@ -3,7 +3,7 @@ mixin crystal---textblock(textblock_options)
     `crystal---textblock--${textblock_options.modifier}`,
     textblock_options.mixedClasses
   ])
-    .crystal---textblock__container.aligner
+    .crystal---textblock__container.crystal---aligner
       h2.crystal---textblock__heading= textblock_options.heading
       .crystal---textblock__content
         mixin crystal---textblock__paragraph(paragraphText)

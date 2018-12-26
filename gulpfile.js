@@ -59,7 +59,7 @@ const minsvg = function () {
           {moveElemsAttrsToGroup: true},
           {moveGroupAttrsToElems: false},
           {collapseGroups: true},
-          {removeRasterImages: false},
+          {removeRasterimg: false},
           {mergePaths: true},
           {convertShapeToPath: false},
           {sortAttrs: false},
@@ -72,7 +72,7 @@ const minsvg = function () {
           {removeScriptElement: true}
       ]})
     ]))
-    .pipe(gulp.dest('./source/images/'));
+    .pipe(gulp.dest('./source/img/'));
 };
 
 const minbitmap = function () {
@@ -92,7 +92,7 @@ const minbitmap = function () {
         quality: 90
       })
     ]))
-    .pipe(gulp.dest('./source/images/'));
+    .pipe(gulp.dest('./source/img/'));
 };
 
 const cleanbuild = function () {
@@ -110,12 +110,12 @@ var copyfonts = function () {
 }
 
 var copysvg = function () {
-  return gulp.src('./source/images/*.svg')
+  return gulp.src('./source/img/*.svg')
     .pipe(gulp.dest('./build/img/'));
 }
 
 var copybitmap = function () {
-  return gulp.src('./source/images/*.{jpg,png}')
+  return gulp.src('./source/img/*.{jpg,png}')
     .pipe(gulp.dest('./build/img/'));
 }
 
