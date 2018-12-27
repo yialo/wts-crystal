@@ -5,18 +5,33 @@ mixin crystal---photo(photo_options)
     case photo_options.modifier
       when 'primary'
         img.crystal---photo__image(
-          srcset
-            =`img/${photo_options.modifier}--${photo_options.number + 1}@medium.jpg 585w,
-            img/${photo_options.modifier}--${photo_options.number + 1}@small.jpg 300w`
-          sizes
-            =`${viewportMediumMaxWidth} 300px, 585px`
-          src
-            =`${photo_options.modifier}--${photo_options.number + 1}@small.jpg`
+          srcset=`
+            img/${photo_options.modifier}--${photo_options.number + 1}@585.jpg 585w,
+            img/${photo_options.modifier}--${photo_options.number + 1}@300.jpg 300w
+          `
+          sizes=`
+            ${viewportSmallMaxWidth} 300px,
+            585px
+          `
+          src=`${photo_options.modifier}--${photo_options.number + 1}@300.jpg`
           alt=photo_options.imageName
         )
       when 'magazine'
         img.crystal---photo__image(
-          src
-            =`${photo_options.modifier}--${photo_options.number + 1}@small.jpg`
+          srcset=`
+            img/${photo_options.modifier}--${photo_options.number + 1}@788.jpg 788w,
+            img/${photo_options.modifier}--${photo_options.number + 1}@748.jpg 748w,
+            img/${photo_options.modifier}--${photo_options.number + 1}@300.jpg 300w
+          `
+          sizes=`
+            ${viewportSmallMaxWidth} 300px,
+            ${viewportMediumMaxWidth} 748px,
+            788px
+          `
+          src=`img/${photo_options.modifier}--${photo_options.number + 1}@300.jpg`
           alt=`Журнал, фото №${photo_options.number + 1}`
+        )
+      when 'manner'
+        img.crystal---photo__image(
+
         )
