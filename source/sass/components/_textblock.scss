@@ -9,6 +9,7 @@
 .crystal---textblock__paragraph {
   @include margin-hor;
   margin-top: 0;
+  margin-bottom: 0;
 
   &:not(:last-child) {
     margin-bottom: 20px;

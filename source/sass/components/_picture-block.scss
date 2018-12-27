@@ -5,3 +5,7 @@
   text-transform: uppercase;
   color: red;
 }
+
+.crystal---picture-block__list {
+  @include list;
+}
