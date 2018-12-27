@@ -13,11 +13,11 @@ mixin crystal---picture-block(pictureblock_options)
           )
             img.crystal---picture-block__image(
               srcset=`
-                img/primary--${pictureBlockItem.number + 1}@medium.jpg 585w,
-                img/primary--${pictureBlockItem.number + 1}@small.jpg 300w
+                img/${pictureblock_options.modifier}--${pictureBlockItem.number + 1}@medium.jpg 585w,
+                img/${pictureblock_options.modifier}--${pictureBlockItem.number + 1}@small.jpg 300w
               `
               sizes=`${viewportMediumMaxWidth} 300px, 585px`
-              src=`img/primary--${pictureBlockItem.number + 1}@small.jpg`
+              src=`${pictureblock_options.modifier}--${pictureBlockItem.number + 1}@small.jpg`
               alt=pictureBlockItem.imageName
             )
         case pictureblock_options.modifier
@@ -26,5 +26,12 @@ mixin crystal---picture-block(pictureblock_options)
               +crystal---picture-block__item({
                 number: index,
                 imageName: value
+              })
+          when 'magazine'
+            - let i = 0;
+            while i <= 2
+              +crystal---picture-block__item({
+                number: i++,
+                imageName: `Журнал, фото №${i}`
               })
 
