@@ -1,5 +1,23 @@
+$banner-sizes: (
+  small: 770,
+  medium: 1300,
+  large: 1920
+);
+
 .crystal---page-header {
+  height: 352px;
   background-color: $palegreen;
+  background-image: url("../img/header-banner@#{map-get($banner-sizes, small)}.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+
+  @media (min-width: $m-min-width) {
+    background-image: url("../img/header-banner@#{map-get($banner-sizes, medium)}.jpg");
+  }
+
+  @media (min-width: $l-min-width) {
+    background-image: url("../img/header-banner@#{map-get($banner-sizes, large)}.jpg");
+  }
 }
 
 .crystal---page-header__list {

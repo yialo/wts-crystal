@@ -6,4 +6,20 @@ mixin crystal---picture-block(pictureblock_options)
     .crystal---picture-block__heading-wrapper
       h2.crystal---picture-block__heading= pictureblock_options.heading
     .crystal---picture-block__container.crystal---aligner
+      ul.crystal---picture-block__list
+        mixin crystal---picture-block__item(pictureBlockItem)
+          li.crystal---picture-block__item(
+            class=`crystal---picture-block__item--${pictureBlockItem.number + 1}`
+          )
+            img.crystal---picture-block__image(
+              src=`img/primary--${pictureBlockItem.number + 1}.jpg`
+              alt=pictureBlockItem.imageName
+            )
+        case pictureblock_options.modifier
+          when 'primary'
+            each value, index in pictureBlockImageNames_primary
+              +crystal---picture-block__item({
+                number: index,
+                imageName: value
+              })
 
