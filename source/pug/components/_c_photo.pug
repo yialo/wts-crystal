@@ -1,0 +1,22 @@
+mixin crystal---photo(photo_options)
+  .crystal---photo(
+    class=`crystal---photo--${photo_options.modifier}`
+  )
+    case photo_options.modifier
+      when 'primary'
+        img.crystal---photo__image(
+          srcset
+            =`img/${photo_options.modifier}--${photo_options.number + 1}@medium.jpg 585w,
+            img/${photo_options.modifier}--${photo_options.number + 1}@small.jpg 300w`
+          sizes
+            =`${viewportMediumMaxWidth} 300px, 585px`
+          src
+            =`${photo_options.modifier}--${photo_options.number + 1}@small.jpg`
+          alt=photo_options.imageName
+        )
+      when 'magazine'
+        img.crystal---photo__image(
+          src
+            =`${photo_options.modifier}--${photo_options.number + 1}@small.jpg`
+          alt=`Журнал, фото №${photo_options.number + 1}`
+        )

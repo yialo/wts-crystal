@@ -7,31 +7,12 @@ mixin crystal---picture-block(pictureblock_options)
       h2.crystal---picture-block__heading= pictureblock_options.heading
     .crystal---picture-block__container.crystal---aligner
       ul.crystal---picture-block__list
-        mixin crystal---picture-block__item(pictureBlockItem)
-          li.crystal---picture-block__item(
-            class=`crystal---picture-block__item--${pictureBlockItem.number + 1}`
-          )
-            img.crystal---picture-block__image(
-              srcset=`
-                img/${pictureblock_options.modifier}--${pictureBlockItem.number + 1}@medium.jpg 585w,
-                img/${pictureblock_options.modifier}--${pictureBlockItem.number + 1}@small.jpg 300w
-              `
-              sizes=`${viewportMediumMaxWidth} 300px, 585px`
-              src=`${pictureblock_options.modifier}--${pictureBlockItem.number + 1}@small.jpg`
-              alt=pictureBlockItem.imageName
-            )
-        case pictureblock_options.modifier
-          when 'primary'
-            each value, index in pictureBlockImageNames_primary
-              +crystal---picture-block__item({
-                number: index,
-                imageName: value
-              })
-          when 'magazine'
-            - let i = 0;
-            while i <= 2
-              +crystal---picture-block__item({
-                number: i++,
-                imageName: `Журнал, фото №${i}`
-              })
-
+        mixin crystal---picture-block__item(number)
+          li.crystal---picture-block__item
+            +crystal---photo({
+              modifier: pictureblock_options.modifier,
+              number: number
+            })
+        - let i = 0;
+        while i < pictureblock_options.imagesAmount
+          +crystal---picture-block__item(i++)
