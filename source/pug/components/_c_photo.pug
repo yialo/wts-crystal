@@ -1,37 +1,71 @@
 mixin crystal---photo(photo_options)
-  .crystal---photo(
-    class=`crystal---photo--${photo_options.modifier}`
-  )
-    case photo_options.modifier
-      when 'primary'
-        img.crystal---photo__image(
-          srcset=`
-            img/${photo_options.modifier}--${photo_options.number + 1}@585.jpg 585w,
-            img/${photo_options.modifier}--${photo_options.number + 1}@300.jpg 300w
-          `
-          sizes=`
+  - let imageAttributes = {};
+  - let photoImagePath = `img/${photo_options.modifier}--${photo_options.number + 1}@`;
+  case photo_options.modifier
+    when 'primary'
+      -
+        imageAttributes = {
+          srcset: `
+            ${photoImagePath}300.jpg 300w,
+            ${photoImagePath}585.jpg 585w
+          `,
+          sizes: `
             ${viewportSmallMaxWidth} 300px,
             585px
-          `
-          src=`${photo_options.modifier}--${photo_options.number + 1}@300.jpg`
-          alt=photo_options.imageName
-        )
-      when 'magazine'
-        img.crystal---photo__image(
-          srcset=`
-            img/${photo_options.modifier}--${photo_options.number + 1}@788.jpg 788w,
-            img/${photo_options.modifier}--${photo_options.number + 1}@748.jpg 748w,
-            img/${photo_options.modifier}--${photo_options.number + 1}@300.jpg 300w
-          `
-          sizes=`
+          `,
+          src: `${photoImagePath}300.jpg`,
+          alt: photoImageNames_primary[photo_options.number]
+        };
+    when 'magazine'
+      -
+        imageAttributes = {
+          srcset: `
+            ${photoImagePath}300.jpg 300w,
+            ${photoImagePath}748.jpg 748w,
+            ${photoImagePath}788.jpg 788w
+          `,
+          sizes: `
             ${viewportSmallMaxWidth} 300px,
             ${viewportMediumMaxWidth} 748px,
             788px
-          `
-          src=`img/${photo_options.modifier}--${photo_options.number + 1}@300.jpg`
-          alt=`Журнал, фото №${photo_options.number + 1}`
-        )
-      when 'manner'
-        img.crystal---photo__image(
+          `,
+          src: `${photoImagePath}300.jpg`,
+          alt: `Журнал, фото №${photo_options.number + 1}`
+        };
+    when 'manner'
+      if photo_options.number === 0
+        -
+          imageAttributes = {
+            srcset: `
+              ${photoImagePath}300.jpg 300w,
+              ${photoImagePath}748.jpg 748w,
+              ${photoImagePath}775.jpg 775w
+            `,
+            sizes: `
+              ${viewportSmallMaxWidth} 300px,
+              ${viewportMediumMaxWidth} 748px,
+              788px
+            `,
+            src: `${photoImagePath}300.jpg`,
+            alt: `Как и с чем, фото №${photo_options.number + 1}`
+          };
+      else
+        -
+          imageAttributes = {
+            srcset: `
+              ${photoImagePath}300.jpg 300w,
+              ${photoImagePath}748.jpg 748w,
+              ${photoImagePath}788.jpg 788w
+            `,
+            sizes: `
+              ${viewportSmallMaxWidth} 300px,
+              ${viewportMediumMaxWidth} 748px,
+              788px
+            `,
+            src: `${photoImagePath}300.jpg`,
+            alt: `Как и с чем, фото №${photo_options.number + 1}`
+          };
 
-        )
+  img.crystal---photo(
+    class=`crystal---photo--${photo_options.modifier}`
+  )&attributes(imageAttributes)
