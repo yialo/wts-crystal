@@ -151,11 +151,10 @@ const html = function launchHtmlCompiler() {
 
 const serve = function launchBrowserSync() {
   browserSync.init({
-    server: './build/',
+    cors: true,
     notify: false,
     open: true,
-    cors: true,
-    ui: false,
+    server: { baseDir: './build/' },
   });
   gulp.watch('./source/js/**/*.js', scripts).on('change', browserSync.reload);
   gulp.watch('./source/sass/**/*.scss', style);

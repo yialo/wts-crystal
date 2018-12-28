@@ -7,7 +7,7 @@
   "license": "ISC",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "x",
-    "autoprefixer": "x",
+    "autoprefixer": "^9.4.3",
     "browser-sync": "x",
     "del": "x",
     "eslint": "x",
