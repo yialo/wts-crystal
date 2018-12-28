@@ -97,33 +97,36 @@ const cleanbuild = function deleteFormerBuildFolder() {
   return del('./build/');
 };
 
-const copyvideo = function copyVideo() {
+const copyvideo = function copyVideoFilesToBuildFolder() {
   return gulp.src('./source/video/*.mp4')
     .pipe(gulp.dest('./build/video/'));
 };
 
-const copyfonts = function copyFonts() {
+const copyfonts = function copyFontFilesToBuildFolder() {
   return gulp.src('./source/fonts/*.{woff,woff2}')
     .pipe(gulp.dest('./build/fonts/'));
 };
 
-const copysvg = function copySvgImages() {
+const copysvg = function copySvgImagesToBuildFolder() {
   return gulp.src('./source/img/*.svg')
     .pipe(gulp.dest('./build/img/'));
 };
 
-const copybitmap = function copyBitmapImages() {
+const copybitmap = function copyBitmapImagesToBuildFolder() {
   return gulp.src('./source/img/*.{jpg,png}')
     .pipe(gulp.dest('./build/img/'));
 };
 
-const scripts = function launchJSCompiler() {
-  return gulp.src('./source/js/*.js')
+const scripts = function launchJsCompiler() {
+  return gulp.src([
+    './source/js/*.js',
+    './source/js/vendors/*.js',
+  ])
     .pipe(minjs())
     .pipe(gulp.dest('./build/js/'));
 };
 
-const style = function launchSassCompiler() {
+const style = function launchCssCompiler() {
   return gulp.src('./source/sass/main.scss')
     .pipe(plumber())
     .pipe(sassglob())
@@ -138,7 +141,7 @@ const style = function launchSassCompiler() {
     .pipe(browserSync.stream());
 };
 
-const html = function launchPugCompiler() {
+const html = function launchHtmlCompiler() {
   return gulp.src('./source/pug/*.pug')
     .pipe(plumber())
     .pipe(pug())
@@ -154,7 +157,7 @@ const serve = function launchBrowserSync() {
     cors: true,
     ui: false,
   });
-  gulp.watch('./source/js/*.js', scripts).on('change', browserSync.reload);
+  gulp.watch('./source/js/**/*.js', scripts).on('change', browserSync.reload);
   gulp.watch('./source/sass/**/*.scss', style);
   gulp.watch('./source/pug/**/*.pug', html);
 };
