@@ -3,6 +3,10 @@
   display: flex;
   overflow: hidden;
   padding-left: 10px;
+
+  &--pictures {
+    text-transform: uppercase;
+  }
 }
 
 .crystal---heading-wrapper__heading {
