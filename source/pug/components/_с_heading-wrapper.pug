@@ -1,0 +1,19 @@
+mixin crystal---heading-wrapper(headingWrapper_options)
+  .crystal---heading-wrapper(
+    class=[
+      `crystal---heading-wrapper--${headingWrapper_options.modifier}`,
+      headingWrapper_options.mixedClasses,
+    ]
+  )
+    mixin crystal---heading-wrapper__clones(headingWrapperClones_options)
+      ul.crystal---heading-wrapper__clones
+        - for (let i =1; i <= headingWrapperClones_options.itemsAmount; i++)
+          li.crystal---heading-wrapper__clone= headingWrapper_options.text
+    if headingWrapper_options.modifier === 'pictures'
+      +crystal---heading-wrapper__clones({
+        itemsAmount: 1,
+      })
+    h2.crystal---heading-wrapper__heading= headingWrapper_options.text
+    +crystal---heading-wrapper__clones({
+      itemsAmount: 4,
+    })

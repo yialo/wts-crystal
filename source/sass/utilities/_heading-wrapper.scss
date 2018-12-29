@@ -1,0 +1,26 @@
+.crystal---heading-wrapper {
+  @include font(700, 40px, 48px);
+  display: flex;
+  overflow: hidden;
+  padding-left: 10px;
+}
+
+.crystal---heading-wrapper__heading {
+  @include font(inherit, inherit, inherit);
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 20px;
+  color: $red;
+}
+
+.crystal---heading-wrapper__clones {
+  @include list;
+  display: flex;
+  color: rgba(0, 0, 0, 0.05);
+}
+
+.crystal---heading-wrapper__clone {
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}

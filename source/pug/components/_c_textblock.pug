@@ -3,8 +3,11 @@ mixin crystal---textblock(textblock_options)
     `crystal---textblock--${textblock_options.modifier}`,
     textblock_options.mixedClasses
   ])
-    .crystal---textblock__heading-wrapper
-      h2.crystal---textblock__heading= textblock_options.heading
+    +crystal---heading-wrapper({
+      modifier: 'textblock',
+      mixedClasses: 'crystal---textblock__heading-wrapper',
+      text: textblock_options.heading,
+    })
     .crystal---textblock__container.crystal---aligner
       mixin crystal---textblock__paragraph(paragraphText)
         p.crystal---textblock__paragraph!= paragraphText

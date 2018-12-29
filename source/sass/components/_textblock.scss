@@ -1,9 +1,6 @@
-.crystal---textblock__heading {
-  @include margin-hor;
-  @include font(700, 40px, 48px);
-  margin-top: 0;
+.crystal---textblock__heading-wrapper {
   margin-bottom: 32px;
-  color: $red;
+  margin-left: calc((100% - #{$s-min-width}) / 2);
 }
 
 .crystal---textblock__paragraph {
