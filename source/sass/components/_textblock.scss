@@ -2,7 +2,7 @@
   @include margin-hor;
   @include font(700, 40px, 48px);
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
   color: $red;
 }
 
@@ -12,6 +12,6 @@
   margin-bottom: 0;
 
   &:not(:last-child) {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 }
