@@ -14,6 +14,11 @@
 
 block variables
 
+mixin getDefaults(values, defaultValues)
+  each value, key in defaultValues
+    if values[key] === undefined
+      - values[key] = defaultValues[key];
+
 include _i_data.pug
 include _i_components.pug
 
