@@ -27,7 +27,8 @@
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^6.0.1",
     "imagemin-zopfli": "^5.1.0",
-    "stylelint": "^9.9.0"
+    "stylelint": "^9.9.0",
+    "stylelint-scss": "^3.4.4"
   },
   "repository": {
     "type": "git"
