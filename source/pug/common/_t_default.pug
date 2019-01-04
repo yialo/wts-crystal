@@ -14,7 +14,7 @@
 
 block variables
 
-mixin getDefaults(values, defaultValues)
+mixin setDefaults(values, defaultValues)
   each value, key in defaultValues
     if values[key] === undefined
       - values[key] = defaultValues[key];
