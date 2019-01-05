@@ -1,8 +1,10 @@
 mixin crystal---picture-block(pictureblock_options)
-  section.crystal---picture-block(class=[
-    `crystal---picture-block--${pictureblock_options.modifier}`,
-    pictureblock_options.mixedClasses
-  ])
+  section.crystal---picture-block(
+    class=[
+      `crystal---picture-block--${pictureblock_options.modifier}`,
+      pictureblock_options.mixedClasses,
+    ]
+  )
     +crystal---heading-wrapper({
       modifier: 'pictures',
       mixedClasses: 'crystal---picture-block__heading-wrapper',
@@ -16,10 +18,10 @@ mixin crystal---picture-block(pictureblock_options)
           )
             +crystal---photo({
               modifier: pictureblock_options.modifier,
-              number: pictureBlockItem_options.number
+              number: pictureBlockItem_options.number,
             })
         - let i = 0;
         while i < pictureblock_options.imagesAmount
           +crystal---picture-block__item({
-            number: i++
+            number: i++,
           })

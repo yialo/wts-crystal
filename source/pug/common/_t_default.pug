@@ -4,11 +4,21 @@
   const viewportMediumMinWidth = '(min-width: 768px)';
   const viewportMediumMaxWidth = '(max-width: 1279px)';
   const viewportLargeMinWidth = '(min-width: 1280px)';
+  const metaData = {
+    'description':
+      'Портфолио студии WayToStart: Столичная Водка',
+    'viewport':
+      'width=device-width, initial-scale=1',
+    'cmsmagazine':
+      'cdc79537f1d9f113c73cd2fd46ca0125',
+    'author':
+      'Веб-студия WayToStart',
+  };
   const fontFamilyName = 'gothampro';
   const fontWeights = [
     'regular',
     'medium',
-    'bold'
+    'bold',
   ];
   const mainElement = 'crystal---page-main__';
 
@@ -27,12 +37,18 @@ html(lang='ru')
   head
     meta(charset='utf-8')
     title= siteName
-    meta(name='description' content='Портфолио студии WayToStart: Столичная Водка')
-    meta(name='viewport' content='width=device-width, initial-scale=1')
-    meta(name='cmsmagazine' content='cdc79537f1d9f113c73cd2fd46ca0125')
-    meta(name='author' content='Веб-студия WayToStart')
+    each value, key in metaData
+      meta(
+        name=key
+        content=value
+      )
     each value in fontWeights
-      link(rel='preload' href=`fonts/${fontFamilyName}-${value}.woff2` as='font' crossorigin)
+      link(
+        rel='preload'
+        href=`fonts/${fontFamilyName}-${value}.woff2`
+        as='font'
+        crossorigin
+      )
     link(rel='stylesheet' href='css/main.min.css')
   body.crystal---page
     header.crystal---page-header.crystal---page__header
@@ -56,7 +72,9 @@ html(lang='ru')
           h1.crystal---visually-hidden Столичная водка
     main.crystal---page-main.crystal---page__main
       block page-main
+        .test
     footer.crystal---page-footer.crystal---page__footer
       p.crystal---page-footer__legend Спасибо за просмотр
+      p Это сайт #{siteName}
     script(src='js/picturefill.js')
     block scripts

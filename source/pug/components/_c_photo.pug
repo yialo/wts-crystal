@@ -1,102 +1,107 @@
 mixin crystal---photo(photo_options)
-  - let imageAttributes = {};
-  - let photoImagePath = `img/${photo_options.modifier}--${photo_options.number + 1}@`;
+  -
+    let imageAttributes = {};
+    let photoImagePath =
+      `img/${photo_options.modifier}--${photo_options.number  + 1}@`;
   case photo_options.modifier
     when 'primary'
       -
         imageAttributes = {
-          srcset: `
-            ${photoImagePath}300.jpg 300w,
-            ${photoImagePath}585.jpg 585w
-          `,
-          sizes: `
-            ${viewportSmallMaxWidth} 300px,
-            585px
-          `,
-          src: `${photoImagePath}300.jpg`,
-          alt: photoImageNames_primary[photo_options.number]
+          srcset:
+            `${photoImagePath}300.jpg 300w,` +
+            `${photoImagePath}585.jpg 585w`,
+          sizes:
+            `${viewportSmallMaxWidth} 300px,` +
+            '585px',
+          src:
+            `${photoImagePath}300.jpg`,
+          alt:
+            photoImageNames_primary[photo_options.number]
         };
     when 'magazine'
       -
         imageAttributes = {
-          srcset: `
-            ${photoImagePath}300.jpg 300w,
-            ${photoImagePath}748.jpg 748w,
-            ${photoImagePath}788.jpg 788w
-          `,
-          sizes: `
-            ${viewportSmallMaxWidth} 300px,
-            ${viewportMediumMaxWidth} 748px,
-            788px
-          `,
-          src: `${photoImagePath}300.jpg`,
-          alt: `Журнал, фото №${photo_options.number + 1}`
+          srcset:
+            `${photoImagePath}300.jpg 300w,` +
+            `${photoImagePath}748.jpg 748w,` +
+            `${photoImagePath}788.jpg 788w`,
+          sizes:
+            `${viewportSmallMaxWidth} 300px,` +
+            `${viewportMediumMaxWidth} 748px,` +
+            '788px',
+          src:
+            `${photoImagePath}300.jpg`,
+          alt:
+            `Журнал, фото №${photo_options.number + 1}`
         };
     when 'manner'
       if photo_options.number === 0
         -
           imageAttributes = {
-            srcset: `
-              ${photoImagePath}300.jpg 300w,
-              ${photoImagePath}748.jpg 748w,
-              ${photoImagePath}775.jpg 775w
-            `,
-            sizes: `
-              ${viewportSmallMaxWidth} 300px,
-              ${viewportMediumMaxWidth} 748px,
-              788px
-            `,
-            src: `${photoImagePath}300.jpg`,
-            alt: `Как и с чем, фото №${photo_options.number + 1}`
+            srcset:
+              `${photoImagePath}300.jpg 300w,` +
+              `${photoImagePath}748.jpg 748w,` +
+              `${photoImagePath}775.jpg 775w`,
+            sizes:
+              `${viewportSmallMaxWidth} 300px,` +
+              `${viewportMediumMaxWidth} 748px,` +
+              '788px',
+            src:
+              `${photoImagePath}300.jpg`,
+            alt:
+              `Как и с чем, фото №${photo_options.number + 1}`
           };
       else
         -
           imageAttributes = {
-            srcset: `
-              ${photoImagePath}300.jpg 300w,
-              ${photoImagePath}748.jpg 748w,
-              ${photoImagePath}788.jpg 788w
-            `,
-            sizes: `
-              ${viewportSmallMaxWidth} 300px,
-              ${viewportMediumMaxWidth} 748px,
-              788px
-            `,
-            src: `${photoImagePath}300.jpg`,
-            alt: `Как и с чем, фото №${photo_options.number + 1}`
+            srcset:
+              `${photoImagePath}300.jpg 300w,` +
+              `${photoImagePath}748.jpg 748w,` +
+              `${photoImagePath}788.jpg 788w`,
+            sizes:
+              `${viewportSmallMaxWidth} 300px,` +
+              `${viewportMediumMaxWidth} 748px,` +
+              '788px',
+            src:
+              `${photoImagePath}300.jpg`,
+            alt:
+              `Как и с чем, фото №${photo_options.number + 1}`
           };
     when 'stories'
       -
         imageAttributes = {
-          srcset: `
-            ${photoImagePath}300.jpg 300w,
-            ${photoImagePath}748.jpg 748w,
-            ${photoImagePath}1592.jpg 1592w
-          `,
-          sizes: `
-            ${viewportSmallMaxWidth} 300px,
-            ${viewportMediumMaxWidth} 748px,
-            1592px
-          `,
-          src: `${photoImagePath}300.jpg`,
-          alt: `Сто личных историй`
+          srcset:
+            `${photoImagePath}300.jpg 300w,` +
+            `${photoImagePath}748.jpg 748w,` +
+            `${photoImagePath}1592.jpg 1592w`,
+          sizes:
+            `${viewportSmallMaxWidth} 300px,` +
+            `${viewportMediumMaxWidth} 748px,` +
+            '1592px',
+          src:
+            `${photoImagePath}300.jpg`,
+          alt:
+            'Сто личных историй'
         };
     when 'history'
       -
         imageAttributes = {
-          srcset: `
-            ${photoImagePath}300.jpg 300w,
-            ${photoImagePath}748.jpg 748w,
-            ${photoImagePath}983.jpg 983w
-          `,
-          sizes: `
-            ${viewportSmallMaxWidth} 300px,
-            ${viewportMediumMaxWidth} 748px,
-            983px
-          `,
-          src: `${photoImagePath}300.jpg`,
-          alt: `История`
+          srcset:
+            `${photoImagePath}300.jpg 300w,` +
+            `${photoImagePath}748.jpg 748w,` +
+            `${photoImagePath}983.jpg 983w`,
+          sizes:
+            `${viewportSmallMaxWidth} 300px,` +
+            `${viewportMediumMaxWidth} 748px,` +
+            '983px',
+          src:
+            `${photoImagePath}300.jpg`,
+          alt:
+            'История'
         };
   img.crystal---photo(
     class=`crystal---photo--${photo_options.modifier}`
   )&attributes(imageAttributes)
+
+//- TODO: dsafafsdasf
+//- FIXME: dsfasf
