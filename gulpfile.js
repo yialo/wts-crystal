@@ -1,3 +1,5 @@
+'use strict';
+
 // Variables
 
 const autoprefixer = require('autoprefixer');
