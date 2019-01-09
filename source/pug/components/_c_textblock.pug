@@ -4,7 +4,8 @@ mixin crystal---textblock(textblock_options)
     `${mainElement}section`,
   ])
     +crystal---heading({
-      modifier: 'textblock',
+      generalModifier: 'textblock',
+      specialModifier: textblock_options.modifier,
       mixedClasses: 'crystal---textblock__heading',
       text: textblock_options.heading,
     })

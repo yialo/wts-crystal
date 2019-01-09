@@ -6,7 +6,8 @@ mixin crystal---picture-block(pictureblock_options)
     ]
   )
     +crystal---heading({
-      modifier: 'pictures',
+      generalModifier: 'pictures',
+      specialModifier: pictureblock_options.modifier,
       mixedClasses: 'crystal---picture-block__heading',
       text: pictureblock_options.heading,
     })
