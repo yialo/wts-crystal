@@ -1,7 +1,41 @@
 mixin crystal---heading(heading_options)
-  header.crystal---heading
-    .crystal---heading__inner
-      mixin crystal---heading__item()
-        li.crystal---heading__item= heading_options.text
-
+  header.crystal---heading(
+    class=`crystal---heading--${heading_options.modifier}`
+  )&attributes({
+    class: heading_options.mixedClasses,
+  })
+    .crystal---heading__container
+      mixin crystal---heading__item(headingItem_options)
+        if headingItem_options.mark === 'mainline'
+          li.crystal---heading__item
+            h2.crystal---heading__mainline= headingItem_options.text
+        else
+          li.crystal---heading__item= headingItem_options.text
       ul.crystal---heading__list
+        - let i = 1;
+        case heading_options.modifier
+          when 'textblock'
+            while i <= 5
+              if i === 1
+                +crystal---heading__item({
+                  text: heading_options.text,
+                  mark: 'mainline',
+                })
+              else
+                +crystal---heading__item({
+                  text: heading_options.text,
+                })
+              - i++;
+        case heading_options.modifier
+          when 'pictures'
+            while i <= 7
+              if i === 3
+                +crystal---heading__item({
+                  text: heading_options.text,
+                  mark: 'mainline',
+                })
+              else
+                +crystal---heading__item({
+                  text: heading_options.text,
+                })
+              - i++;

@@ -1,9 +1,9 @@
-.crystal---picture-block__heading-wrapper {
+.crystal---picture-block__heading {
   margin-bottom: 32px;
 }
 
 .crystal---picture-block__legend {
-  @include font(500, 32px, 1.15);
+  @include font(500, 28px, 1.15);
   margin-top: 0;
   margin-bottom: 16px;
 }

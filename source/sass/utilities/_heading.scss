@@ -1,0 +1,55 @@
+.crystal---heading {
+  overflow: hidden;
+}
+
+.crystal---heading__container {
+  margin-left: calc((100% - #{map-get($min-content-width, small)}) / 2);
+}
+
+.crystal---heading__list {
+  @include list;
+  display: flex;
+
+  .crystal---heading--pictures & {
+    position: relative;
+  }
+}
+
+.crystal---heading__item {
+  @include font(700, 32px, 1.15);
+  flex-shrink: 0;
+  max-width: map-get($min-content-width, small);
+
+  .crystal---heading--textblock & {
+    color: rgba(0, 0, 0, 0.05);
+  }
+
+  .crystal---heading--textblock &:not(:last-child) {
+    margin-right: 16px;
+  }
+
+  .crystal---heading--pictures & {
+    text-transform: uppercase;
+  }
+
+  .crystal---heading--pictures &:not(:last-child) {
+    margin-right: 32px;
+  }
+
+  .crystal---heading--pictures &:nth-child(1) {
+    position: absolute;
+    transform: translateX(calc(-200% - 64px));
+  }
+
+  .crystal---heading--pictures &:nth-child(2) {
+    position: absolute;
+    transform: translateX(calc(-100% - 32px));
+  }
+}
+
+.crystal---heading__mainline {
+  @include font(inherit, inherit, inherit);
+  margin-top: 0;
+  margin-bottom: 0;
+  color: $red;
+}
