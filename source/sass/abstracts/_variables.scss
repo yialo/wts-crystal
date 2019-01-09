@@ -5,5 +5,11 @@ $m-man-width: 1279px;
 $l-min-width: 1280px;
 $l-max-width: 1600px;
 
+$min-content-width: (
+  small: $s-min-width - 20px,
+  medium: $m-min-width - 20px,
+  large: $l-min-width - 20px,
+);
+
 $palegreen: #78939a;
 $red: #e51d2e;

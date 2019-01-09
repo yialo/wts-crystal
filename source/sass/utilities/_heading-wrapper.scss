@@ -1,8 +1,7 @@
 .crystal---heading-wrapper {
-  @include font(700, 40px, 48px);
+  @include font(700, 32px, 42px);
   display: flex;
   overflow: hidden;
-  padding-left: 10px;
 
   &--pictures {
     text-transform: uppercase;
@@ -11,19 +10,40 @@
 
 .crystal---heading-wrapper__heading {
   @include font(inherit, inherit, inherit);
+  flex-shrink: 0;
+  position: relative;
+  max-width: map-get($min-content-width, small);
   margin-top: 0;
   margin-bottom: 0;
-  margin-right: 20px;
+  margin-left: calc((100% - #{map-get($min-content-width, small)}) / 2);
   color: $red;
 }
 
 .crystal---heading-wrapper__clones {
   @include list;
+  flex-shrink: 0;
+  position: absolute;
+  top: 0;
   display: flex;
   color: rgba(0, 0, 0, 0.05);
+
+  .crystal---heading-wrapper--textblock & {
+    left: calc(100% + 20px);
+  }
+
+  .crystal---heading-wrapper--pictures &:first-child {
+    left: calc(-100% - 20px);
+  }
+
+  .crystal---heading-wrapper--pictures &:last-child {
+    left: calc(100% + 20px);
+  }
 }
 
 .crystal---heading-wrapper__clone {
+  flex-shrink: 0;
+  max-width: map-get($min-content-width, small);
+
   &:not(:last-child) {
     margin-right: 20px;
   }
