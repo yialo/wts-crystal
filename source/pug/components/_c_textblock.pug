@@ -1,7 +1,7 @@
 mixin crystal---textblock(textblock_options)
   section.crystal---textblock(class=[
     `crystal---textblock--${textblock_options.modifier}`,
-    textblock_options.mixedClasses
+    `${mainElement}section`,
   ])
     +crystal---heading-wrapper({
       modifier: 'textblock',

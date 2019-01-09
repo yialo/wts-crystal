@@ -1,11 +1,63 @@
-.crystal---picture-block__heading {
-  @include font(700, 48px, 48px);
+.crystal---picture-block__heading-wrapper {
+  margin-bottom: 32px;
+}
+
+.crystal---picture-block__legend {
+  @include font(500, 32px, 1.15);
   margin-top: 0;
-  margin-bottom: 0;
-  text-transform: uppercase;
-  color: $red;
+  margin-bottom: 16px;
 }
 
 .crystal---picture-block__list {
   @include list;
+  counter-reset: item-numbering;
+}
+
+.crystal---picture-block__item {
+  .crystal---picture-block--primary & {
+    position: relative;
+    padding-top: 48px;
+
+    &::before {
+      @include font(700, 32px, 1);
+      content: counter(item-numbering);
+      position: absolute;
+      top: 0;
+      color: red;
+      counter-increment: item-numbering;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      width: calc(100% - 30px);
+      height: 2px;
+      background-color: #d6d6d6;
+    }
+
+    &:nth-child(2n+1) {
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
+    }
+
+    &:nth-child(2n) {
+      &::before {
+        right: 0;
+      }
+
+      &::after {
+        left: 0;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
 }
