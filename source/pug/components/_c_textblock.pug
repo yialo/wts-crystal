@@ -3,9 +3,9 @@ mixin crystal---textblock(textblock_options)
     `crystal---textblock--${textblock_options.modifier}`,
     `${mainElement}section`,
   ])
-    +crystal---heading-wrapper({
+    +crystal---heading({
       modifier: 'textblock',
-      mixedClasses: 'crystal---textblock__heading-wrapper',
+      mixedClasses: 'crystal---textblock__heading',
       text: textblock_options.heading,
     })
     .crystal---textblock__container.crystal---aligner

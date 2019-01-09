@@ -5,9 +5,9 @@ mixin crystal---picture-block(pictureblock_options)
       `${mainElement}section`,
     ]
   )
-    +crystal---heading-wrapper({
+    +crystal---heading({
       modifier: 'pictures',
-      mixedClasses: 'crystal---picture-block__heading-wrapper',
+      mixedClasses: 'crystal---picture-block__heading',
       text: pictureblock_options.heading,
     })
     .crystal---picture-block__container.crystal---aligner

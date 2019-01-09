@@ -51,66 +51,14 @@ html(lang='ru')
       )
     link(rel='stylesheet' href='css/main.min.css')
   body.crystal---page
-    header.crystal---page-header.crystal---page__header
-      .crystal---page-header__container.crystal---aligner
-        ul.crystal---page-header__list
-          li.crystal---page-header__item UI / UX
-          li.crystal---page-header__item 2018
-          li.crystal---page-header__item
-            span.crystal---page-header__string WayToStart
-            = ' studio'
-        .crystal---logo.crystal---page-header__logo
-          picture.crystal---logo__image-wrapper
-            source(
-              media=viewportMediumMinWidth
-              srcset='img/logo@388.png'
-            )
-            img.crystal---logo__image(
-              src='img/logo@300.png'
-              alt='Столичная водка'
-            )
-          h1.crystal---visually-hidden Столичная водка
+    +crystal---page-header({
+      mixedClassname: 'crystal---page__header',
+    })
     main.crystal---page-main.crystal---page__main
       block page-main
         .test
-    footer.crystal---page-footer.crystal---page__footer
-      .crystal---page-footer--inner
-        mixin crystal---page-footer__item(pageFooterItem_options)
-          li.crystal---page-footer__item(
-            class
-              =`crystal---page-footer__item--${pageFooterItem_options.modifier}`
-          )= pageFooterItem_options.text
-
-        mixin crystal---page-footer__list(pageFooterList_options)
-          ul.crystal---page-footer__list(
-            class
-              =`crystal---page-footer__list--${pageFooterList_options.modifier}`
-          )
-            -
-              let i = 1;
-            case pageFooterList_options.modifier
-              when 'quadruplet'
-                while i++ <= 5
-                  +crystal---page-footer__item({
-                    modifier: 'creator',
-                    text: 'WayToStart',
-                  })
-              when 'triplet'
-              when 'quadruplet'
-                while i++ <= 3
-                  +crystal---page-footer__item({
-                    modifier: 'thanks',
-                    text: 'Спасибо за просмотр',
-                  })
-        +crystal---page-footer__list({
-          modifier: 'quadruplet',
-        })
-        +crystal---page-footer__list({
-          modifier: 'triplet',
-        })
-        +crystal---page-footer__list({
-          modifier: 'quadruplet',
-        })
+    +crystal---page-footer({
+      mixedClassname: 'crystal---page__footer',
+    })
       script(src='js/picturefill.js')
       block scripts
-
