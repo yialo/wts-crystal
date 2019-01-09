@@ -1,7 +1,46 @@
-.crystal---page-footer__legend {
-  @include font(700, 48px, 48px);
+.crystal---page-footer {
+  padding-bottom: 64px;
+  overflow: hidden;
+}
+
+.crystal---page-footer--inner {
+  transform: translateX(-80px);
+  margin-left: calc((100% - #{map-get($min-content-width, small)}) / 2);
+}
+
+.crystal---page-footer__list {
+  @include list;
+  display: flex;
+
+  &:nth-child(2n+1) {
+    transform: translateX(-200px);
+  }
+
+  &:nth-child(2) {
+    transform: translateX(-234px);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.crystal---page-footer__item {
+  @include font(700, 22px, 1);
+  flex-shrink: 0;
   margin-top: 0;
   margin-bottom: 0;
   text-transform: uppercase;
-  color: $red;
+
+  &:not(:last-child) {
+    margin-right: 24px;
+  }
+
+  .crystal---page-footer__list--quadruplet & {
+    color: rgba(0, 0, 0, 0.2);
+  }
+
+  .crystal---page-footer__list--triplet &:nth-child(2) {
+    color: $red;
+  }
 }

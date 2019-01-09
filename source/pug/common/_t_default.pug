@@ -74,6 +74,43 @@ html(lang='ru')
       block page-main
         .test
     footer.crystal---page-footer.crystal---page__footer
-      p.crystal---page-footer__legend Спасибо за просмотр
-    script(src='js/picturefill.js')
-    block scripts
+      .crystal---page-footer--inner
+        mixin crystal---page-footer__item(pageFooterItem_options)
+          li.crystal---page-footer__item(
+            class
+              =`crystal---page-footer__item--${pageFooterItem_options.modifier}`
+          )= pageFooterItem_options.text
+
+        mixin crystal---page-footer__list(pageFooterList_options)
+          ul.crystal---page-footer__list(
+            class
+              =`crystal---page-footer__list--${pageFooterList_options.modifier}`
+          )
+            -
+              let i = 1;
+            case pageFooterList_options.modifier
+              when 'quadruplet'
+                while i++ <= 5
+                  +crystal---page-footer__item({
+                    modifier: 'creator',
+                    text: 'WayToStart',
+                  })
+              when 'triplet'
+              when 'quadruplet'
+                while i++ <= 3
+                  +crystal---page-footer__item({
+                    modifier: 'thanks',
+                    text: 'Спасибо за просмотр',
+                  })
+        +crystal---page-footer__list({
+          modifier: 'quadruplet',
+        })
+        +crystal---page-footer__list({
+          modifier: 'triplet',
+        })
+        +crystal---page-footer__list({
+          modifier: 'quadruplet',
+        })
+      script(src='js/picturefill.js')
+      block scripts
+
