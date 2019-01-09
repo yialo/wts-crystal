@@ -1,7 +1,7 @@
 mixin crystal---heading(heading_options)
     -
       let specialModifierClassname =
-        heading_options.generalModifier === 'pictures' ? {
+        (heading_options.generalModifier === 'pictures') ? {
             class: `crystal---heading--${heading_options.generalModifier}_${heading_options.specialModifier}`,
           } : '';
     header.crystal---heading(

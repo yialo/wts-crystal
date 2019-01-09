@@ -10,14 +10,14 @@
   margin-right: $marginHorizontal;
 }
 
-@mixin list {
+@mixin list() {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
   list-style-type: none;
 }
 
-@mixin outline {
-  outline: 1px solid green;
+@mixin outline($color: green) {
+  outline: 1px solid $color;
   outline-offset: -1px;
 }
