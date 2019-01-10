@@ -1,4 +1,5 @@
 $s-min-width: 320px;
+$s-midpoint: 500px;
 $s-max-width: 767px;
 $m-min-width: 768px;
 $m-man-width: 1279px;
@@ -11,19 +12,7 @@ $min-content-width: (
   large: $l-min-width - 20px,
 );
 
-$heading-pictures-blocks-small: (
-  primary: 200,
-  magazine: 110,
-  manner: 140,
-  stories: 120,
-  history: 160,
-);
-
-$history-bg-sizes: (
-  small: 300,
-  medium: 748,
-  large: 983,
-);
+$heading-margin-left-flexible: "(100vw - #{$s-midpoint}) / 2";
 
 $palegreen: #78939a;
 $red: #e51d2e;

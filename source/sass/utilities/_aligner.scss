@@ -1,6 +1,9 @@
 .crystal-aligner {
   @include margin-hor;
-  max-width: $l-max-width;
   padding-left: 10px;
   padding-right: 10px;
+
+  @media (min-width: $l-min-width) {
+    max-width: $l-max-width;
+  }
 }

@@ -1,3 +1,11 @@
+$heading-pictures-blocks-small: (
+  primary: 200,
+  magazine: 110,
+  manner: 140,
+  stories: 120,
+  history: 160,
+);
+
 .crystal-heading {
   overflow: hidden;
 
@@ -17,8 +25,8 @@
 .crystal-heading__container {
   margin-left: 10px;
 
-  @media (min-width: 500px) {
-    margin-left: calc((100% - 480px) / 2);
+  @media (min-width: $s-midpoint) {
+    margin-left: calc(#{$heading-margin-left-flexible} + 10px);
   }
 }
 
