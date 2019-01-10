@@ -4,7 +4,7 @@ $banner-sizes: (
   large: 1920,
 );
 
-.crystal---page-header {
+.crystal-page-header {
   height: 352px;
   overflow: hidden;
   background-color: $palegreen;
@@ -21,7 +21,7 @@ $banner-sizes: (
   }
 }
 
-.crystal---page-header__container {
+.crystal-page-header__container {
   display: grid;
   grid-template-rows: 1fr auto;
   height: 100%;
@@ -29,12 +29,12 @@ $banner-sizes: (
   padding-bottom: 16px;
 }
 
-.crystal---page-header__list {
+.crystal-page-header__list {
   @include list;
   order: 1;
 }
 
-.crystal---page-header__item {
+.crystal-page-header__item {
   @include font(400, 16px, 16px);
   letter-spacing: 0.1em;
   text-align: right;
@@ -46,6 +46,6 @@ $banner-sizes: (
   }
 }
 
-.crystal---page-header__string {
+.crystal-page-header__string {
   font-weight: 700;
 }

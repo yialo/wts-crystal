@@ -1,20 +1,28 @@
-.crystal---picture-block__heading {
+.crystal-picture-block {
+  &--history {
+    background-image: url("../img/history-bg@#{map-get($history-bg-sizes, small)}.png");
+    background-repeat: no-repeat;
+    background-position: calc(50% + 350px) 100%;
+  }
+}
+
+.crystal-picture-block__heading {
   margin-bottom: 32px;
 }
 
-.crystal---picture-block__legend {
+.crystal-picture-block__legend {
   @include font(500, 28px, 1.15);
   margin-top: 0;
   margin-bottom: 16px;
 }
 
-.crystal---picture-block__list {
+.crystal-picture-block__list {
   @include list;
   counter-reset: item-numbering;
 }
 
-.crystal---picture-block__item {
-  .crystal---picture-block--primary & {
+.crystal-picture-block__item {
+  .crystal-picture-block--primary & {
     position: relative;
     padding-top: 48px;
 

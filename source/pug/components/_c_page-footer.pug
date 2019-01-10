@@ -1,36 +1,36 @@
-mixin crystal---page-footer(pageFooter_options)
-  footer.crystal---page-footer&attributes({
+mixin crystal-page-footer(pageFooter_options)
+  footer.crystal-page-footer&attributes({
     class: pageFooter_options.mixedClassname,
   })
-    .crystal---page-footer__container
-      mixin crystal---page-footer__item(pageFooterItem_options)
-        li.crystal---page-footer__item(
+    .crystal-page-footer__container
+      mixin crystal-page-footer__item(pageFooterItem_options)
+        li.crystal-page-footer__item(
           class
-            =`crystal---page-footer__item--${pageFooterItem_options.modifier}`
+            =`crystal-page-footer__item--${pageFooterItem_options.modifier}`
         )= pageFooterItem_options.text
 
-      mixin crystal---page-footer__list(pageFooterList_options)
-        ul.crystal---page-footer__list(
+      mixin crystal-page-footer__list(pageFooterList_options)
+        ul.crystal-page-footer__list(
           class
-            =`crystal---page-footer__list--${pageFooterList_options.modifier}`
+            =`crystal-page-footer__list--${pageFooterList_options.modifier}`
         )
           -
             let i = 1;
           case pageFooterList_options.modifier
             when 'quadruplet'
               while i++ <= 5
-                +crystal---page-footer__item({
+                +crystal-page-footer__item({
                   modifier: 'creator',
                   text: 'WayToStart',
                 })
             when 'triplet'
             when 'quadruplet'
               while i++ <= 3
-                +crystal---page-footer__item({
+                +crystal-page-footer__item({
                   modifier: 'thanks',
                   text: 'Спасибо за просмотр',
                 })
       each value, index in ['quadruplet', 'triplet', 'quadruplet']
-        +crystal---page-footer__list({
+        +crystal-page-footer__list({
           modifier: value,
         })

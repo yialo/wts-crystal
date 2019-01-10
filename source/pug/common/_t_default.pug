@@ -20,7 +20,7 @@
     'medium',
     'bold',
   ];
-  const mainElement = 'crystal---page-main__';
+  const mainElement = 'crystal-page-main__';
 
 block variables
 
@@ -50,15 +50,15 @@ html(lang='ru')
         crossorigin
       )
     link(rel='stylesheet' href='css/main.min.css')
-  body.crystal---page
-    +crystal---page-header({
-      mixedClassname: 'crystal---page__header',
+  body.crystal-page
+    +crystal-page-header({
+      mixedClassname: 'crystal-page__header',
     })
-    main.crystal---page-main.crystal---page__main
+    main.crystal-page-main.crystal-page__main
       block page-main
         .test
-    +crystal---page-footer({
-      mixedClassname: 'crystal---page__footer',
+    +crystal-page-footer({
+      mixedClassname: 'crystal-page__footer',
     })
       script(src='js/picturefill.js')
       block scripts

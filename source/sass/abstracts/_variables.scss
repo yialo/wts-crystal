@@ -11,5 +11,19 @@ $min-content-width: (
   large: $l-min-width - 20px,
 );
 
+$heading-pictures-blocks-small: (
+  primary: 200,
+  magazine: 110,
+  manner: 140,
+  stories: 120,
+  history: 160,
+);
+
+$history-bg-sizes: (
+  small: 300,
+  medium: 748,
+  large: 983,
+);
+
 $palegreen: #78939a;
 $red: #e51d2e;

@@ -1,4 +1,4 @@
-mixin crystal---photo(photo_options)
+mixin crystal-photo(photo_options)
   -
     let imageAttributes = {};
     let photoImagePath =
@@ -99,6 +99,6 @@ mixin crystal---photo(photo_options)
           alt:
             'История'
         };
-  img.crystal---photo(
-    class=`crystal---photo--${photo_options.modifier}`
+  img.crystal-photo(
+    class=`crystal-photo--${photo_options.modifier}`
   )&attributes(imageAttributes)

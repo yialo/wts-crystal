@@ -1,16 +1,16 @@
-mixin crystal---textblock(textblock_options)
-  section.crystal---textblock(class=[
-    `crystal---textblock--${textblock_options.modifier}`,
+mixin crystal-textblock(textblock_options)
+  section.crystal-textblock(class=[
+    `crystal-textblock--${textblock_options.modifier}`,
     `${mainElement}section`,
   ])
-    +crystal---heading({
+    +crystal-heading({
       generalModifier: 'textblock',
       specialModifier: textblock_options.modifier,
-      mixedClasses: 'crystal---textblock__heading',
+      mixedClasses: 'crystal-textblock__heading',
       text: textblock_options.heading,
     })
-    .crystal---textblock__container.crystal---aligner
-      mixin crystal---textblock__paragraph(paragraphText)
-        p.crystal---textblock__paragraph!= paragraphText
+    .crystal-textblock__container.crystal-aligner
+      mixin crystal-textblock__paragraph(paragraphText)
+        p.crystal-textblock__paragraph!= paragraphText
       each value in textblock_options.dataSource
-        +crystal---textblock__paragraph(value)
+        +crystal-textblock__paragraph(value)
