@@ -13,10 +13,12 @@ $banner-sizes: (
   background-position: top;
 
   @media (min-width: $m-min-width) {
+    height: 594px;
     background-image: url("../img/header-banner@#{map-get($banner-sizes, medium)}.jpg");
   }
 
   @media (min-width: $l-min-width) {
+    height: 877px;
     background-image: url("../img/header-banner@#{map-get($banner-sizes, large)}.jpg");
   }
 }
@@ -31,6 +33,12 @@ $banner-sizes: (
   padding-bottom: 16px;
   padding-left: 10px;
   padding-right: 10px;
+
+  @media (min-width: $m-min-width) {
+    grid-template-rows: auto 1fr;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
 }
 
 .crystal-page-header__logo {
@@ -39,13 +47,26 @@ $banner-sizes: (
   width: 300px;
 
   @media (min-width: $s-midpoint) {
-    margin-right: calc((100vw - #{$s-midpoint}) / 2);
+    margin-right: calc(((100% - #{$s-midpoint}) / 2) + 10px);
+  }
+
+  @media (min-width: $m-min-width) {
+    align-self: start;
+    width: 388px;
+    margin-top: 100px;
+    margin-right: calc(((100% - #{$m-min-width}) / 2) + 10px);
   }
 }
 
 .crystal-page-header__list {
   @include list;
   order: 1;
+
+  @media (min-width: $m-min-width) {
+    order: 0;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .crystal-page-header__item {
@@ -57,6 +78,12 @@ $banner-sizes: (
 
   &:not(:last-child) {
     margin-bottom: 24px;
+  }
+
+  @media (min-width: $m-min-width) {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
   }
 }
 

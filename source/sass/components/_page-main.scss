@@ -2,4 +2,10 @@
   &:not(:last-child) {
     margin-bottom: 64px;
   }
+
+  @media (min-width: $m-min-width) {
+    &:not(:last-child) {
+      margin-bottom: 96px;
+    }
+  }
 }

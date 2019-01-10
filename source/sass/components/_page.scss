@@ -1,7 +1,15 @@
 .crystal-page__header {
   margin-bottom: 64px;
+
+  @media (min-width: $m-min-width) {
+    margin-bottom: 96px;
+  }
 }
 
 .crystal-page__main {
   margin-bottom: 64px;
+
+  @media (min-width: $m-min-width) {
+    margin-bottom: 96px;
+  }
 }

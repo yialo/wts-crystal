@@ -1,9 +1,19 @@
 .crystal-textblock__heading {
   margin-bottom: 32px;
+
+  @media (min-width: $m-min-width) {
+    margin-bottom: 48px;
+  }
 }
 
 .crystal-textblock__container {
   max-width: $s-midpoint;
+
+  @media (min-width: $m-min-width) {
+    max-width: none;
+    padding-left: 144px;
+    padding-right: 144px;
+  }
 }
 
 .crystal-textblock__paragraph {

@@ -2,6 +2,7 @@ $s-min-width: 320px;
 $s-midpoint: 500px;
 $s-max-width: 767px;
 $m-min-width: 768px;
+$m-midpoint: 960px;
 $m-man-width: 1279px;
 $l-min-width: 1280px;
 $l-max-width: 1600px;
@@ -12,7 +13,7 @@ $min-content-width: (
   large: $l-min-width - 20px,
 );
 
-$heading-margin-left-flexible: "(100vw - #{$s-midpoint}) / 2";
+$heading-margin-left-flexible: calc((100% - #{$s-midpoint}) / 2 + 10px);
 
 $palegreen: #78939a;
 $red: #e51d2e;

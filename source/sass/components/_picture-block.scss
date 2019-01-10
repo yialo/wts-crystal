@@ -8,7 +8,12 @@
   margin-bottom: 16px;
 
   @media (min-width: $s-midpoint) {
-    margin-left: calc(#{$heading-margin-left-flexible});
+    margin-left: $heading-margin-left-flexible;
+  }
+
+  @media (min-width: $m-min-width) {
+    margin-left: 134px;
+    font-size: 48px;
   }
 }
 

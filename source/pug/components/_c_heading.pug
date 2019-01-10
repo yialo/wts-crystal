@@ -5,10 +5,11 @@ mixin crystal-heading(heading_options)
             class: `crystal-heading--${heading_options.generalModifier}_${heading_options.specialModifier}`,
           } : '';
     header.crystal-heading(
-      class=`crystal-heading--${heading_options.generalModifier}`
-    )&attributes(
-      specialModifierClassname,
-      { class: heading_options.mixedClasses },
+      class=[
+        `crystal-heading--${heading_options.generalModifier}`,
+        `crystal-heading--${heading_options.generalModifier}_${heading_options.specialModifier}`,
+        heading_options.mixedClasses,
+      ]
     )
       .crystal-heading__container
         mixin crystal-heading__item(headingItem_options)
@@ -21,7 +22,7 @@ mixin crystal-heading(heading_options)
           - let i = 1;
           case heading_options.generalModifier
             when 'textblock'
-              while i <= 5
+              while i <= 8
                 if i === 1
                   +crystal-heading__item({
                     text: heading_options.text,
