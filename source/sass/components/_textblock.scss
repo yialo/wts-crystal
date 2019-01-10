@@ -2,8 +2,11 @@
   margin-bottom: 32px;
 }
 
+.crystal-textblock__container {
+  max-width: 500px;
+}
+
 .crystal-textblock__paragraph {
-  @include margin-hor;
   margin-top: 0;
   margin-bottom: 0;
 

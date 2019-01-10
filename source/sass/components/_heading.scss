@@ -15,7 +15,11 @@
 }
 
 .crystal-heading__container {
-  margin-left: calc((100% - #{map-get($min-content-width, small)}) / 2);
+  margin-left: 10px;
+
+  @media (min-width: 500px) {
+    margin-left: calc((100% - 480px) / 2);
+  }
 }
 
 .crystal-heading__list {
