@@ -10,6 +10,11 @@
   margin-right: $marginHorizontal;
 }
 
+@mixin padding-hor($paddingHorizontal: 10px) {
+  padding-left: $paddingHorizontal;
+  padding-right: $paddingHorizontal;
+}
+
 @mixin list() {
   margin-top: 0;
   margin-bottom: 0;

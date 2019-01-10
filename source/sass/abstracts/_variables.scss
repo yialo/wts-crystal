@@ -3,6 +3,7 @@ $s-midpoint: 500px;
 $s-max-width: 767px;
 $m-min-width: 768px;
 $m-midpoint: 960px;
+$m-textblock-grid-trigger: 1040px;
 $m-man-width: 1279px;
 $l-min-width: 1280px;
 $l-max-width: 1600px;
@@ -16,4 +17,5 @@ $min-content-width: (
 $heading-margin-left-flexible: calc((100% - #{$s-midpoint}) / 2 + 10px);
 
 $palegreen: #78939a;
+$picture-borders: #d6d6d6;
 $red: #e51d2e;

@@ -7,6 +7,7 @@
 }
 
 .crystal-textblock__container {
+  @include padding-hor;
   max-width: $s-midpoint;
 
   @media (min-width: $m-min-width) {
@@ -15,7 +16,7 @@
     padding-right: 144px;
   }
 
-  @media (min-width: $l-min-width) {
+  @media (min-width: $m-textblock-grid-trigger) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-flow: column;
@@ -33,6 +34,11 @@
       grid-template-rows: repeat(2, auto);
     }
   }
+
+  @media (min-width: $l-min-width) {
+    @include padding-hor(32px);
+    max-width: $l-max-width;
+  }
 }
 
 .crystal-textblock__paragraph {
@@ -43,7 +49,7 @@
     margin-bottom: 24px;
   }
 
-  @media (min-width: $l-min-width) {
+  @media (min-width: $m-textblock-grid-trigger) {
     &:not(:last-child) {
       margin-bottom: 0;
     }

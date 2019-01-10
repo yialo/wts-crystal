@@ -32,6 +32,12 @@ $heading-pictures-blocks-small: (
   @media (min-width: $m-min-width) {
     margin-left: 144px;
   }
+
+  @media (min-width: $l-min-width) {
+    .crystal-heading--textblock & {
+      margin-left: 30px;
+    }
+  }
 }
 
 .crystal-heading__list {
@@ -64,7 +70,7 @@ $heading-pictures-blocks-small: (
     &::before {
       position: absolute;
       z-index: -1;
-      width: 500%;
+      width: 1000%;
     }
 
     &:not(:last-child) {

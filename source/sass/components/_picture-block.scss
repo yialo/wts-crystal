@@ -1,10 +1,34 @@
+.crystal-picture-block {
+  @media (min-width: 983px) {
+    &--history {
+      background-image: url("../img/history-bg@983.png");
+      background-repeat: no-repeat;
+      background-position: 1183px 100%;
+    }
+  }
+}
+
 .crystal-picture-block__heading {
   margin-bottom: 16px;
+
+  @media (min-width: $m-min-width) {
+    margin-bottom: 32px;
+  }
 }
 
 .crystal-picture-block__container {
-  .crystal-picture-block--primary & {
-    @media (min-width: $m-min-width) {
+  @include padding-hor;
+
+  @media (min-width: $m-min-width) {
+    .crystal-picture-block--primary & {
+      max-width: $m-midpoint;
+    }
+
+    .crystal-picture-block--magazine & {
+      max-width: $m-midpoint;
+    }
+
+    .crystal-picture-block--manner & {
       max-width: $m-midpoint;
     }
   }
@@ -32,6 +56,13 @@
     display: flex;
     flex-direction: column;
     counter-reset: item-numbering;
+  }
+
+  @media (min-width: $m-min-width) {
+    .crystal-picture-block--magazine & {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
 
@@ -62,7 +93,7 @@
       top: 15px;
       width: calc(100% - 30px);
       height: 2px;
-      background-color: #d6d6d6;
+      background-color: $picture-borders;
     }
 
     &:nth-child(2n+1) {
@@ -110,17 +141,22 @@
 
   .crystal-picture-block--history & {
     max-width: 748px;
+    margin-left: 0;
   }
 
   @media (min-width: $m-min-width) {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
     .crystal-picture-block--primary & {
       &::after {
         z-index: -1;
         width: 100%;
-        height: calc(100% + 16px);
+        height: calc(100% + 32px);
         background-color: transparent;
         border-style: solid;
-        border-color: #d6d6d6;;
+        border-color: $picture-borders;
       }
 
       &:last-child {
@@ -146,12 +182,69 @@
       }
     }
 
+    .crystal-picture-block--magazine & {
+      &:nth-child(2n+1) {
+        margin-left: 0;
+      }
+
+      &--2 {
+        margin-right: 0;
+      }
+    }
+
     .crystal-picture-block--stories & {
       max-width: 1592px;
     }
 
     .crystal-picture-block--history & {
       max-width: 983px;
+    }
+  }
+
+  @media (min-width: $m-midpoint) {
+    .crystal-picture-block--magazine & {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        border-style: solid;
+        border-color: $picture-borders;
+      }
+
+      &--1 {
+        &::after {
+          top: 0;
+          right: -40px;
+          width: 100%;
+          height: calc(100% + 32px);
+          border-width: 0 4px 0 0;
+        }
+      }
+
+      &--2 {
+        padding-top: 48px;
+
+        &::after {
+          top: 0;
+          right: 0;
+          width: calc(100% + 28px);
+          height: calc(100% + 32px);
+          border-width: 4px 0 0 4px;
+        }
+      }
+
+      &--3 {
+        padding-top: 48px;
+
+        &::after {
+          bottom: 0;
+          left: 0;
+          width: calc(100% + 28px);
+          height: calc(100% + 4px);
+          border-width: 4px 4px 0 0;
+        }
+      }
     }
   }
 }
