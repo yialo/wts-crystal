@@ -7,7 +7,6 @@ $banner-sizes: (
 .crystal-page-header {
   height: 352px;
   overflow: hidden;
-  background-color: $palegreen;
   background-image: url("../img/header-banner@#{map-get($banner-sizes, small)}.jpg");
   background-repeat: no-repeat;
   background-position: top;

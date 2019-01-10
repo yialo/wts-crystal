@@ -22,7 +22,7 @@ mixin crystal-heading(heading_options)
           - let i = 1;
           case heading_options.generalModifier
             when 'textblock'
-              while i <= 10
+              while i <= 20
                 if i === 1
                   +crystal-heading__item({
                     text: heading_options.text,
@@ -35,7 +35,7 @@ mixin crystal-heading(heading_options)
                 - i++;
           case heading_options.generalModifier
             when 'pictures'
-              while i <= 10
+              while i <= 20
                 if i === 3
                   +crystal-heading__item({
                     text: heading_options.text,

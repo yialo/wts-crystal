@@ -53,16 +53,7 @@
   @include list;
 
   .crystal-picture-block--primary & {
-    display: flex;
-    flex-direction: column;
     counter-reset: item-numbering;
-  }
-
-  @media (min-width: $m-min-width) {
-    .crystal-picture-block--magazine & {
-      display: flex;
-      flex-direction: column;
-    }
   }
 }
 
@@ -123,15 +114,21 @@
 
   .crystal-picture-block--magazine & {
     max-width: 788px;
+
+    &:nth-child(2n+1) {
+      margin-left: 0;
+    }
   }
 
   .crystal-picture-block--manner & {
     &--1 {
       max-width: 775px;
+      margin-left: 0;
     }
 
     &--2 {
       max-width: 788px;
+      margin-right: 0;
     }
   }
 
