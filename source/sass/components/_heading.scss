@@ -6,6 +6,14 @@ $heading-pictures-blocks-small: (
   history: 160,
 );
 
+$heading-pictures-blocks-large: (
+  primary: 470,
+  magazine: 212,
+  manner: 266,
+  stories: 270,
+  history: 286,
+);
+
 .crystal-heading {
   overflow: hidden;
 
@@ -18,6 +26,14 @@ $heading-pictures-blocks-small: (
   @each $key, $value in $heading-pictures-blocks-small {
     &--pictures_#{$key} {
       height: #{$value}px;
+    }
+  }
+
+  @media (min-width: $l-min-width) {
+    @each $key, $value in $heading-pictures-blocks-large {
+      &--pictures_#{$key} {
+        height: #{$value}px;
+      }
     }
   }
 }
@@ -87,7 +103,7 @@ $heading-pictures-blocks-small: (
       background-repeat: repeat-x;
     }
 
-    &:not(:last-child) {
+    &:nth-child(n+3):nth-last-child(n+2) {
       margin-right: var(--heading--pictures-margin-right);
     }
 
@@ -117,25 +133,31 @@ $heading-pictures-blocks-small: (
     }
   }
 
-  .crystal-heading--pictures_stories & {
-    width: 240px;
-  }
-
   @each $key, $value in $heading-pictures-blocks-small {
-    .crystal-heading--pictures_#{$key} &::before {
-      transform: translateY(calc(-50% + 1.15em / 2));
-      height: #{$value}px;
+    .crystal-heading--pictures_#{$key} & {
+      &::before {
+        transform: translateY(calc(-50% + 1.15em / 2));
+        height: #{$value}px;
+      }
     }
 
     @each $number in (2, 4) {
-      .crystal-heading--pictures_#{$key} &:nth-child(#{$number})::before {
-        background-image: url("../img/heading--#{$key}@#{$value}.png");
+      .crystal-heading--pictures_#{$key} & {
+        &:nth-child(#{$number}) {
+          &::before {
+            background-image: url("../img/heading--#{$key}@#{$value}.png");
+          }
+        }
       }
     }
   }
 
-  .crystal-heading--pictures_stories &::before {
-    transform: translateY(calc(-50% + 2.3em / 2));
+  .crystal-heading--pictures_stories & {
+    width: 240px;
+
+    &::before {
+      transform: translateY(calc(-50% + 2.3em / 2));
+    }
   }
 
   @media (min-width: $m-min-width) {
@@ -157,18 +179,38 @@ $heading-pictures-blocks-small: (
     }
 
     .crystal-heading--pictures_stories & {
-      width: 360px;
+      width: auto;
+
+      &::before {
+        transform: translateY(calc(-50% + 1.15em / 2));
+      }
     }
   }
 
   @media (min-width: $l-min-width) {
+    max-width: map-get($min-content-width, large);
+
     .crystal-heading--pictures & {
       max-width: map-get($min-content-width, large);
       font-size: 64px;
     }
 
-    .crystal-heading--pictures_stories & {
-      width: auto;
+    @each $key, $value in $heading-pictures-blocks-large {
+      .crystal-heading--pictures_#{$key} & {
+        &::before {
+          height: #{$value}px;
+        }
+      }
+
+      @each $number in (2, 4) {
+        .crystal-heading--pictures_#{$key} & {
+          &:nth-child(#{$number}) {
+            &::before {
+              background-image: url("../img/heading--#{$key}@#{$value}.png");
+            }
+          }
+        }
+      }
     }
   }
 }
