@@ -30,12 +30,24 @@ $heading-pictures-blocks-small: (
   }
 
   @media (min-width: $m-min-width) {
-    margin-left: 144px;
+    margin-left: var(--textblock__container-PaddingHorizontal);
   }
 
   @media (min-width: $l-min-width) {
+    .crystal-heading--pictures & {
+      margin-left: 144px;
+    }
+  }
+
+  @media (min-width: ($l-max-width + $textblock-heading-margin-left-l * 2)) {
     .crystal-heading--textblock & {
-      margin-left: 30px;
+      margin-left: calc((100% - #{$l-max-width}) / 2);
+    }
+  }
+
+  @media (min-width: ($l-max-width + 288px)) {
+    .crystal-heading--pictures & {
+      margin-left: calc((100% - #{$l-max-width}) / 2);
     }
   }
 }

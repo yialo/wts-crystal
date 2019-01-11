@@ -1,9 +1,27 @@
 .crystal-picture-block {
   @media (min-width: 983px) {
     &--history {
-      background-image: url("../img/history-bg@983.png");
-      background-repeat: no-repeat;
-      background-position: 1183px 100%;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 1183px;
+        width: 983px;
+        height: 1355px;
+        background-image: url("../img/history-bg@983.png");
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  @media (min-width: $l-max-width) {
+    &--history {
+      &::before {
+        left: calc(50% + 383px);
+      }
     }
   }
 }
@@ -30,6 +48,12 @@
 
     .crystal-picture-block--manner & {
       max-width: $m-midpoint;
+    }
+  }
+
+  @media (min-width: 983px) {
+    .crystal-picture-block--history & {
+      overflow: hidden;
     }
   }
 }
@@ -82,9 +106,11 @@
       content: "";
       position: absolute;
       top: 15px;
+      z-index: -1;
       width: calc(100% - 30px);
-      height: 2px;
-      background-color: $picture-borders;
+      border-style: solid;
+      border-color: $picture-borders;
+      border-width: 4px 0 0 0;
     }
 
     &:nth-child(2n+1) {
@@ -148,10 +174,8 @@
 
     .crystal-picture-block--primary & {
       &::after {
-        z-index: -1;
         width: 100%;
         height: calc(100% + 32px);
-        background-color: transparent;
         border-style: solid;
         border-color: $picture-borders;
       }

@@ -1,0 +1,11 @@
+:root {
+  --textblock__container-PaddingHorizontal: 10px;
+
+  @media (min-width: $m-min-width) {
+    --textblock__container-PaddingHorizontal: 144px;
+  }
+
+  @media (min-width: $l-min-width) {
+    --textblock__container-PaddingHorizontal: #{$textblock-heading-margin-left-l};
+  }
+}
