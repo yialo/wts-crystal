@@ -47,6 +47,7 @@
   @media (min-width: $m-min-width) {
     @each $value in $constrained-by-m-midpoint {
       .crystal-picture-block--#{$value} & {
+        // max-width: calc(#{$m-midpoint} - (100vw - 100%));
         max-width: $m-midpoint;
       }
     }
@@ -282,7 +283,7 @@
     }
   }
 
-  @media (min-width: $m-midpoint) {
+  @media (min-width: ($m-midpoint + 40px)) {
     .crystal-picture-block--magazine & {
       position: relative;
 
@@ -321,7 +322,7 @@
         &::after {
           bottom: 0;
           right: -25px;
-          width: calc(100% - 137px);
+          width: calc(100% - 127px);
           height: calc(100% + 4px);
           border-width: 4px 4px 0 0;
         }

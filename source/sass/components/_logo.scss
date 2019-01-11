@@ -4,5 +4,5 @@
 }
 
 .crystal-logo__heading {
-  @include visually-hiding;
+  @include accessible-hiding;
 }

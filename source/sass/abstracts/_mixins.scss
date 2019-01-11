@@ -22,7 +22,7 @@
   list-style-type: none;
 }
 
-@mixin visually-hiding() {
+@mixin accessible-hiding() {
   position: absolute;
   width: 1px;
   height: 1px;
