@@ -19,6 +19,10 @@
     transform: translateX(-340px);
     margin-left: calc((100% - #{map-get($min-content-width, medium)}) / 2);
   }
+
+  @media (min-width: $l-min-width) {
+    margin-left: calc((100% - #{map-get($min-content-width, large)}) / 2);
+  }
 }
 
 .crystal-page-footer__list {
@@ -35,6 +39,18 @@
 
   &:not(:last-child) {
     margin-bottom: 16px;
+  }
+
+  @media (min-width: $m-min-width) {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  @media (min-width: $l-min-width) {
+    &:not(:last-child) {
+      margin-bottom: 36px;
+    }
   }
 }
 
@@ -60,6 +76,8 @@
   @media (min-width: $m-min-width) {
     font-size: 48px;
   }
-}
 
-// TODO: add large-vp styles
+  @media (min-width: $l-min-width) {
+    font-size: 64px;
+  }
+}
