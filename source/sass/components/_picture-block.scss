@@ -70,6 +70,10 @@
     .crystal-picture-block--primary & {
       position: relative;
     }
+
+    .crystal-picture-block--magazine & {
+      max-width: $m-midpoint;
+    }
   }
 }
 
@@ -115,6 +119,16 @@
       display: flex;
       flex-wrap: wrap;
       align-items: flex-start;
+      grid-row-gap: 0;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .crystal-picture-block--magazine & {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: flex-start;
       grid-row-gap: 0;
     }
   }
@@ -294,8 +308,8 @@
 
         &::after {
           top: 0;
-          right: 0;
-          width: calc(100% + 28px);
+          left: 0;
+          width: calc(100% - 112px);
           height: calc(100% + 32px);
           border-width: 4px 0 0 4px;
         }
@@ -306,8 +320,8 @@
 
         &::after {
           bottom: 0;
-          left: 0;
-          width: calc(100% + 28px);
+          right: -25px;
+          width: calc(100% - 137px);
           height: calc(100% + 4px);
           border-width: 4px 4px 0 0;
         }
