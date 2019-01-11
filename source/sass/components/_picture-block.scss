@@ -39,12 +39,12 @@
 }
 
 .crystal-picture-block__container {
+  $constrained-by-m-midpoint: (primary, magazine, history);
+
   @include margin-hor;
   @include padding-hor;
 
   @media (min-width: $m-min-width) {
-    $constrained-by-m-midpoint: (primary, magazine, history);
-
     @each $value in $constrained-by-m-midpoint {
       .crystal-picture-block--#{$value} & {
         max-width: $m-midpoint;
@@ -60,6 +60,16 @@
 
   @media (min-width: $l-min-width) {
     max-width: $l-max-width;
+
+    @each $value in $constrained-by-m-midpoint {
+      .crystal-picture-block--#{$value} & {
+        max-width: $l-max-width;
+      }
+    }
+
+    .crystal-picture-block--primary & {
+      position: relative;
+    }
   }
 }
 
@@ -73,29 +83,52 @@
   }
 
   @media (min-width: $m-min-width) {
+    margin-bottom: 24px;
     margin-left: 134px;
     font-size: 48px;
+  }
+
+  @media (min-width: $l-min-width) {
+    position: absolute;
+    top: 450px;
+    width: 420px;
+    margin-bottom: 0;
+    margin-left: 0;
   }
 }
 
 .crystal-picture-block__list {
   @include list;
+  display: grid;
+  grid-row-gap: 16px;
 
   .crystal-picture-block--primary & {
     counter-reset: item-numbering;
   }
+
+  @media (min-width: $m-min-width) {
+    grid-row-gap: 32px;
+  }
+
+  @media (min-width: $l-min-width) {
+    .crystal-picture-block--primary & {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      grid-row-gap: 0;
+    }
+  }
 }
 
 .crystal-picture-block__item {
+  $odd-items: (1, 3);
+  $even-items: (2, 4);
+
   @include margin-hor;
 
-  &:not(:last-child) {
-    margin-bottom: 16px;
-  }
-
   .crystal-picture-block--primary & {
-    max-width: 585px;
     position: relative;
+    max-width: 585px;
     padding-top: 48px;
 
     &::before {
@@ -118,27 +151,31 @@
       border-width: 4px 0 0 0;
     }
 
-    &:nth-child(2n+1) {
-      margin-left: 0;
+    @each $value in $odd-items {
+      &--#{$value} {
+        margin-left: 0;
 
-      &::before {
-        left: 0;
-      }
+        &::before {
+          left: 0;
+        }
 
-      &::after {
-        right: 0;
+        &::after {
+          right: 0;
+        }
       }
     }
 
-    &:nth-child(2n) {
-      margin-right: 0;
+    @each $value in $even-items {
+      &--#{$value} {
+        margin-right: 0;
 
-      &::before {
-        right: 0;
-      }
+        &::before {
+          right: 0;
+        }
 
-      &::after {
-        left: 0;
+        &::after {
+          left: 0;
+        }
       }
     }
   }
@@ -146,8 +183,10 @@
   .crystal-picture-block--magazine & {
     max-width: 788px;
 
-    &:nth-child(2n+1) {
-      margin-left: 0;
+    @each $value in $odd-items {
+      &--#{$value} {
+        margin-left: 0;
+      }
     }
   }
 
@@ -173,10 +212,6 @@
   }
 
   @media (min-width: $m-min-width) {
-    &:not(:last-child) {
-      margin-bottom: 32px;
-    }
-
     .crystal-picture-block--primary & {
       &::after {
         width: 100%;
@@ -185,32 +220,38 @@
         border-color: $picture-borders;
       }
 
-      &:last-child {
+      &--4 {
         &::after {
           height: calc(100% - 15px);
         }
       }
 
-      &:nth-child(2n+1) {
-        &::after {
-          left: 30px;
-          right: auto;
-          border-width: 4px 4px 0 0;
+      @each $value in $odd-items {
+        &--#{$value} {
+          &::after {
+            left: 30px;
+            right: auto;
+            border-width: 4px 4px 0 0;
+          }
         }
       }
 
-      &:nth-child(2n) {
-        &::after {
-          left: auto;
-          right: 30px;
-          border-width: 4px 0 0 4px;
+      @each $value in $even-items {
+        &--#{$value} {
+          &::after {
+            left: auto;
+            right: 30px;
+            border-width: 4px 0 0 4px;
+          }
         }
       }
     }
 
     .crystal-picture-block--magazine & {
-      &:nth-child(2n+1) {
-        margin-left: 0;
+      @each $value in $odd-items {
+        &--#{$value} {
+          margin-left: 0;
+        }
       }
 
       &--2 {
@@ -269,6 +310,95 @@
           width: calc(100% + 28px);
           height: calc(100% + 4px);
           border-width: 4px 4px 0 0;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $l-min-width) {
+    .crystal-picture-block--primary & {
+      padding-top: 0;
+
+      &::before {
+        top: auto;
+        left: auto;
+        right: auto;
+      }
+
+      &::after {
+        top: auto;
+        left: auto;
+        right: auto;
+      }
+
+      &--1 {
+        margin-right: 24px;
+
+        &::before {
+          top: calc(100% + 15px);
+          left: 0;
+        }
+
+        &::after {
+          top: 0;
+          right: 0;
+          width: calc(100% - 30px);
+          border-width: 0 0 4px 0;
+        }
+      }
+
+      &--2 {
+        margin-top: 182px;
+        margin-bottom: 24px;
+        margin-left: 0;
+
+        &::before {
+          bottom: calc(100% + 15px);
+          right: 15px;
+        }
+
+        &::after {
+          bottom: 0;
+          left: 0;
+          width: calc(100% - 45px);
+          border-width: 4px 0 0 0;
+        }
+      }
+
+      &--3 {
+        order: 1;
+        margin-right: 0;
+
+        &::before {
+          top: -4px;
+          left: -37px;
+        }
+
+        &::after {
+          top: 40px;
+          left: -28px;
+          width: 100%;
+          height: 110px;
+          border-width: 0 0 0 4px;
+        }
+      }
+
+      &--4 {
+        margin-top: 182px;
+        margin-left: auto;
+        margin-right: 24px;
+
+        &::before {
+          bottom: calc(100% + 15px);
+          left: 0;
+        }
+
+        &::after {
+          bottom: 0;
+          right: 0;
+          width: calc(100% - 30px);
+          height: calc(100% + 32px);
+          border-width: 4px 0 0 0;
         }
       }
     }
