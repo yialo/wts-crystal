@@ -76,8 +76,9 @@ $banner-sizes: (
 
   @media (min-width: $m-min-width) {
     order: 0;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
   }
 }
 
@@ -93,6 +94,14 @@ $banner-sizes: (
   }
 
   @media (min-width: $m-min-width) {
+    &:nth-child(1) {
+      text-align: left;
+    }
+
+    &:nth-child(2) {
+      text-align: center;
+    }
+
     &:not(:last-child) {
       margin-bottom: 0;
     }
