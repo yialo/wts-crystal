@@ -32,6 +32,10 @@
   @media (min-width: $m-min-width) {
     margin-bottom: 32px;
   }
+
+  @media (min-width: $l-min-width) {
+    margin-bottom: 64px;
+  }
 }
 
 .crystal-picture-block__container {

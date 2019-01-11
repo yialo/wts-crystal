@@ -160,6 +160,17 @@ $heading-pictures-blocks-small: (
       width: 360px;
     }
   }
+
+  @media (min-width: $l-min-width) {
+    .crystal-heading--pictures & {
+      max-width: map-get($min-content-width, large);
+      font-size: 64px;
+    }
+
+    .crystal-heading--pictures_stories & {
+      width: auto;
+    }
+  }
 }
 
 .crystal-heading__mainline {

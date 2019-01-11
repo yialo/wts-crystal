@@ -4,6 +4,10 @@
   @media (min-width: $m-min-width) {
     margin-bottom: 96px;
   }
+
+  @media (min-width: $l-min-width) {
+    margin-bottom: 128px;
+  }
 }
 
 .crystal-page__main {
@@ -11,5 +15,9 @@
 
   @media (min-width: $m-min-width) {
     margin-bottom: 96px;
+  }
+
+  @media (min-width: $l-min-width) {
+    margin-bottom: 200px;
   }
 }

@@ -4,6 +4,10 @@
   @media (min-width: $m-min-width) {
     margin-bottom: 48px;
   }
+
+  @media (min-width: $l-min-width) {
+    margin-bottom: 64px;
+  }
 }
 
 .crystal-textblock__container {

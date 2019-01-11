@@ -5,6 +5,10 @@
   @media (min-width: $m-min-width) {
     padding-bottom: 128px;
   }
+
+  @media (min-width: $l-min-width) {
+    padding-bottom: 200px;
+  }
 }
 
 .crystal-page-footer__container {
