@@ -39,19 +39,16 @@
 }
 
 .crystal-picture-block__container {
+  @include margin-hor;
   @include padding-hor;
 
   @media (min-width: $m-min-width) {
-    .crystal-picture-block--primary & {
-      max-width: $m-midpoint;
-    }
+    $constrained-by-m-midpoint: (primary, magazine, history);
 
-    .crystal-picture-block--magazine & {
-      max-width: $m-midpoint;
-    }
-
-    .crystal-picture-block--manner & {
-      max-width: $m-midpoint;
+    @each $value in $constrained-by-m-midpoint {
+      .crystal-picture-block--#{$value} & {
+        max-width: $m-midpoint;
+      }
     }
   }
 
@@ -59,6 +56,10 @@
     .crystal-picture-block--history & {
       overflow: hidden;
     }
+  }
+
+  @media (min-width: $l-min-width) {
+    max-width: $l-max-width;
   }
 }
 

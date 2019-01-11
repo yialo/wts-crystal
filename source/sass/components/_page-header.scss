@@ -39,6 +39,7 @@ $banner-sizes: (
 
   @media (min-width: $l-min-width) {
     @include padding-hor(32px);
+    max-width: $l-max-width;
     padding-top: 100px;
     padding-bottom: 100px;
   }

@@ -1,7 +1,0 @@
-.crystal-aligner {
-  @include margin-hor;
-
-  @media (min-width: $l-min-width) {
-    max-width: $l-max-width;
-  }
-}

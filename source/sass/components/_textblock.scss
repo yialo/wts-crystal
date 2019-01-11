@@ -11,6 +11,7 @@
 }
 
 .crystal-textblock__container {
+  @include margin-hor;
   @include padding-hor(var(--textblock__container-PaddingHorizontal));
   max-width: $s-midpoint;
 

@@ -1,0 +1,14 @@
+mixin crystal-logo(logo_options)
+  .crystal-logo&attributes({
+    class: logo_options.mixedClassnames,
+  })
+    picture.crystal-logo__image-wrapper
+      source(
+        media=viewportMediumMinWidth
+        srcset='img/logo@388.png'
+      )
+      img.crystal-logo__image(
+        src='img/logo@300.png'
+        alt='Столичная водка'
+      )
+    h1.crystal-logo__heading Столичная водка
