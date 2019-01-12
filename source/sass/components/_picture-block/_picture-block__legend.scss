@@ -1,0 +1,23 @@
+.crystal-picture-block__legend {
+  @include font(500, 28px, 1.15);
+  margin-top: 0;
+  margin-bottom: 16px;
+
+  @media (min-width: $s-midpoint) {
+    margin-left: $heading-margin-left-flexible;
+  }
+
+  @media (min-width: $m-min-width) {
+    margin-bottom: 24px;
+    margin-left: 134px;
+    font-size: 48px;
+  }
+
+  @media (min-width: $l-min-width) {
+    position: absolute;
+    top: 450px;
+    width: 420px;
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+}

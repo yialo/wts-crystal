@@ -1,0 +1,27 @@
+.crystal-picture-block {
+  @media (min-width: 983px) {
+    &--history {
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 1183px;
+        width: 983px;
+        height: 1355px;
+        background-image: url("../img/history-bg@983.png");
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  @media (min-width: $l-max-width) {
+    &--history {
+      &::before {
+        left: calc(50% + 383px);
+      }
+    }
+  }
+}

@@ -1,3 +1,5 @@
+/* Viewport */
+
 $s-min-width: 320px;
 $s-midpoint: 500px;
 $s-max-width: 767px;
@@ -8,6 +10,13 @@ $m-man-width: 1279px;
 $l-min-width: 1280px;
 $l-max-width: 1600px;
 
+/* Colors */
+
+$picture-borders: #d6d6d6;
+$red: #e51d2e;
+
+/* Various */
+
 $min-content-width: (
   small: $s-min-width - 20px,
   medium: $m-min-width - 20px,
@@ -17,5 +26,24 @@ $min-content-width: (
 $heading-margin-left-flexible: calc((100% - #{$s-midpoint}) / 2 + 10px);
 $textblock-heading-margin-left-l: 32px;
 
-$picture-borders: #d6d6d6;
-$red: #e51d2e;
+$heading-pictures-blocks-small: (
+  primary: 200,
+  magazine: 110,
+  manner: 140,
+  stories: 120,
+  history: 160,
+);
+
+$heading-pictures-blocks-large: (
+  primary: 470,
+  magazine: 212,
+  manner: 266,
+  stories: 270,
+  history: 286,
+);
+
+$banner-sizes: (
+  small: 770,
+  medium: 1300,
+  large: 1920,
+);

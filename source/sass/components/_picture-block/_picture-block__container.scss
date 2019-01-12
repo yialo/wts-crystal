@@ -1,0 +1,29 @@
+.crystal-picture-block__container {
+  @include margin-hor;
+  @include padding-hor;
+
+  @media (min-width: $m-min-width) {
+    .crystal-picture-block--primary & {
+      max-width: $m-midpoint;
+    }
+
+    .crystal-picture-block--magazine & {
+      max-width: $m-midpoint;
+    }
+  }
+
+  @media (min-width: 983px) {
+    .crystal-picture-block--history & {
+      overflow: hidden;
+    }
+  }
+
+  @media (min-width: $l-min-width) {
+    max-width: $l-max-width;
+
+    .crystal-picture-block--primary & {
+      position: relative;
+      max-width: $l-max-width;
+    }
+  }
+}

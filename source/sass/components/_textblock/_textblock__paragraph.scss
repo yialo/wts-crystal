@@ -1,0 +1,14 @@
+.crystal-textblock__paragraph {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: $m-textblock-grid-trigger) {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+}

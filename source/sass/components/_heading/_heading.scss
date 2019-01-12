@@ -1,0 +1,23 @@
+.crystal-heading {
+  overflow: hidden;
+
+  &--pictures {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @each $key, $value in $heading-pictures-blocks-small {
+    &--pictures_#{$key} {
+      height: #{$value}px;
+    }
+  }
+
+  @media (min-width: $l-min-width) {
+    @each $key, $value in $heading-pictures-blocks-large {
+      &--pictures_#{$key} {
+        height: #{$value}px;
+      }
+    }
+  }
+}

@@ -14,7 +14,7 @@ const postcss = require('gulp-postcss');
 const pug = require('gulp-pug');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
-const sassglob = require('gulp-sass-glob');
+const sassGlob = require('gulp-sass-glob');
 const zopfli = require('imagemin-zopfli');
 
 // Task functions
@@ -130,7 +130,7 @@ const scripts = function launchJsCompiler() {
 const style = function launchCssCompiler() {
   return gulp.src('./source/sass/main.scss')
     .pipe(plumber())
-    .pipe(sassglob())
+    .pipe(sassGlob())
     .pipe(sass())
     .pipe(postcss([
       autoprefixer(),

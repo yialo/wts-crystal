@@ -1,0 +1,22 @@
+.crystal-page-header__container {
+  @include margin-hor;
+  @include padding-hor;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  @media (min-width: $m-min-width) {
+    grid-template-rows: auto 1fr;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  @media (min-width: $l-min-width) {
+    @include padding-hor(32px);
+    max-width: $l-max-width;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}

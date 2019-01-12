@@ -1,0 +1,12 @@
+.crystal-page-footer {
+  padding-bottom: 64px;
+  overflow: hidden;
+
+  @media (min-width: $m-min-width) {
+    padding-bottom: 128px;
+  }
+
+  @media (min-width: $l-min-width) {
+    padding-bottom: 200px;
+  }
+}
