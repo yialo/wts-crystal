@@ -25,5 +25,9 @@
       position: relative;
       max-width: $l-max-width;
     }
+
+    .crystal-picture-block--magazine & {
+      max-width: $l-max-width;
+    }
   }
 }

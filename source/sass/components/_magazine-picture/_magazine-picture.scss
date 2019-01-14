@@ -5,17 +5,15 @@
     &::after {
       content: "";
       position: absolute;
+      width: calc(100% + 40px);
       border-style: solid;
       border-color: $picture-borders;
     }
 
     &--1 {
-      padding-right: 50px;
-
       &::after {
         top: 0;
-        right: -40px;
-        width: 100%;
+        left: 0;
         height: calc(100% + 32px);
         border-width: 0 4px 0 0;
       }
@@ -26,8 +24,7 @@
 
       &::after {
         top: 0;
-        left: 0;
-        width: calc(100% - 112px);
+        right: -10px;
         height: calc(100% + 32px);
         border-width: 4px 0 0 4px;
       }
@@ -38,10 +35,42 @@
 
       &::after {
         bottom: 0;
-        right: -25px;
-        width: calc(100% - 127px);
-        height: calc(100% + 4px);
+        left: -10px;
+        height: calc(100% + 1px);
         border-width: 4px 4px 0 0;
+      }
+    }
+  }
+
+  @media (min-width: $l-max-width) {
+    padding-top: 0;
+
+    &--1 {
+      &::after {
+        top: auto;
+        bottom: 28px;
+        left: calc(100% + 24px);
+        width: 394px;
+        height: 100px;
+        border-width: 4px 4px 0 0;
+      }
+    }
+
+    &--2 {
+      &::after {
+        display: none;
+      }
+    }
+
+    &--3 {
+
+      &::after {
+        top: -128px;
+        bottom: auto;
+        left: 388px;
+        width: 462px;
+        height: 100px;
+        border-width: 4px 0 0 4px;
       }
     }
   }

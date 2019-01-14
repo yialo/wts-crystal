@@ -15,8 +15,19 @@
     }
   }
 
+  .crystal-picture-block--stories & {
+    max-width: 748px;
+  }
+
+  .crystal-picture-block--history & {
+    max-width: 748px;
+    margin-left: 0;
+  }
+
   @media (min-width: $m-min-width) {
     .crystal-picture-block--magazine & {
+      max-width: 788px;
+
       @for $value from 1 through 4 {
         &--#{$value} {
           @if $value % 2 != 0 {
@@ -43,12 +54,11 @@
     }
 
     .crystal-picture-block--stories & {
-      max-width: 748px;
+      max-width: 1592px;
     }
 
     .crystal-picture-block--history & {
-      max-width: 748px;
-      margin-left: 0;
+      max-width: 983px;
     }
   }
 
@@ -75,25 +85,19 @@
         margin-right: 24px;
       }
     }
+  }
 
+  @media (min-width: $l-max-width) {
     .crystal-picture-block--magazine & {
-      max-width: 788px;
-
-      @for $value from 1 through 4 {
-        &--#{$value} {
-          @if $value % 2 != 0 {
-            margin-left: 0;
-          }
-        }
+      &--1 {
+        margin-bottom: 457px;
       }
-    }
 
-    .crystal-picture-block--stories & {
-      max-width: 1592px;
-    }
-
-    .crystal-picture-block--history & {
-      max-width: 983px;
+      &--2 {
+        order: 1;
+        margin-top: 237px;
+        margin-left: 0;
+      }
     }
   }
 }

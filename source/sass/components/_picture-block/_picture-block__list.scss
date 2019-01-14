@@ -20,13 +20,15 @@
     }
   }
 
-  @media (min-width: 1600px) {
+  @media (min-width: $l-max-width) {
     .crystal-picture-block--magazine & {
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
       justify-content: flex-start;
+      align-content: space-between;
       grid-row-gap: 0;
+      height: calc(237px + var(--picture-block__list--magazine-shift) + 663px);
     }
   }
 }
