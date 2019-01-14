@@ -9,11 +9,11 @@
     margin-right: 24px;
   }
 
-  .crystal-page-footer__list--quadruplet & {
+  .crystal-page-footer__list--edging & {
     color: rgba(0, 0, 0, 0.2);
   }
 
-  .crystal-page-footer__list--triplet &:nth-child(2) {
+  .crystal-page-footer__list--center &:nth-child(2) {
     color: $red;
   }
 
