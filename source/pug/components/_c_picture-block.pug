@@ -1,3 +1,19 @@
+mixin _bem-crystal-BLOCK-picture(bem_pictureBlock_options)
+  - const blockClass = `crystal-${bem_pictureBlock_options.subname}-picture`;
+  li(
+    class=[
+      blockClass,
+      `${blockClass}--${bem_pictureBlock_options.number}`,
+    ]
+  )&attributes({
+    class: bem_pictureBlock_options.mixedClasses,
+  })
+    +crystal-photo({
+      fileSubmane: bem_pictureBlock_options.subname,
+      number: bem_pictureBlock_options.number,
+    })
+
+
 mixin crystal-picture-block(pictureblock_options)
   section.crystal-picture-block(
     class=[
@@ -15,15 +31,9 @@ mixin crystal-picture-block(pictureblock_options)
       if pictureblock_options.modifier === 'primary'
         p.crystal-picture-block__legend Полноэкранный скроллинг
       ul.crystal-picture-block__list
-        mixin crystal-picture-block__item(pictureBlockItem_options)
-          li.crystal-picture-block__item(
-            class=`crystal-picture-block__item--${pictureBlockItem_options.number + 1}`
-          )
-            +crystal-photo({
-              modifier: pictureblock_options.modifier,
-              number: pictureBlockItem_options.number,
-            })
         - for (let i = 0; i < pictureblock_options.imagesAmount; i++)
-          +crystal-picture-block__item({
-            number: i,
+          +_bem-crystal-BLOCK-picture({
+            number: i + 1,
+            subname: pictureblock_options.modifier,
+            mixedClasses: `crystal-picture-block__item crystal-picture-block__item--${i + 1}`,
           })

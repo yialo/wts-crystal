@@ -2,8 +2,8 @@ mixin crystal-photo(photo_options)
   -
     let imageAttributes = {};
     let photoImagePath =
-      `img/${photo_options.modifier}--${photo_options.number  + 1}@`;
-  case photo_options.modifier
+      `img/${photo_options.fileSubmane}--${photo_options.number}@`;
+  case photo_options.fileSubmane
     when 'primary'
       -
         imageAttributes = {
@@ -18,16 +18,16 @@ mixin crystal-photo(photo_options)
           src:
             `${photoImagePath}788.jpg`,
           alt:
-            `Журнал, фото №${photo_options.number + 1}`
+            `Журнал, фото №${photo_options.number}`
         };
     when 'manner'
       -
-        const mannerPhotoMaxWidth = (photo_options.number === 0) ? 775 : 788;
+        const mannerPhotoMaxWidth = (photo_options.number === 1) ? 775 : 788;
         imageAttributes = {
           src:
             `${photoImagePath}${mannerPhotoMaxWidth}.jpg`,
           alt:
-            `Как и с чем, фото №${photo_options.number + 1}`
+            `Как и с чем, фото №${photo_options.number}`
         };
     when 'stories'
       -
@@ -57,6 +57,4 @@ mixin crystal-photo(photo_options)
           alt:
             'История'
         };
-  img.crystal-photo(
-    class=`crystal-photo--${photo_options.modifier}`
-  )&attributes(imageAttributes)
+  img.crystal-photo&attributes(imageAttributes)

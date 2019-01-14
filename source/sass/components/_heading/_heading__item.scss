@@ -62,7 +62,7 @@
       }
     }
 
-    @each $number in (2, 4) {
+    @each $number in $heading-pictures-attacher-numbers {
       .crystal-heading--pictures_#{$key} & {
         &:nth-child(#{$number}) {
           &::before {
@@ -123,7 +123,7 @@
         }
       }
 
-      @each $number in (2, 4) {
+      @each $number in $heading-pictures-attacher-numbers {
         .crystal-heading--pictures_#{$key} & {
           &:nth-child(#{$number}) {
             &::before {
