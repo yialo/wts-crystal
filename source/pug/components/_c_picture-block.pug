@@ -19,7 +19,7 @@ mixin crystal-picture-block(pictureblock_options)
           li.crystal-picture-block__item(
             class=`crystal-picture-block__item--${i}`
           )
-            +crystal-BLOCKNAME-picture({
+            +crystal-SUBNAME-picture({
               number: i,
               subname: pictureblock_options.modifier,
             })
