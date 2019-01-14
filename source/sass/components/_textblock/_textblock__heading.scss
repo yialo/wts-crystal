@@ -1,0 +1,11 @@
+.crystal-textblock__heading {
+  margin-bottom: 32px;
+
+  @media (min-width: $m-min-width) {
+    margin-bottom: 48px;
+  }
+
+  @media (min-width: $l-min-width) {
+    margin-bottom: 64px;
+  }
+}

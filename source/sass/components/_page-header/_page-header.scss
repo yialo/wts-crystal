@@ -1,0 +1,17 @@
+.crystal-page-header {
+  height: 352px;
+  overflow: hidden;
+  background-image: url("../img/header-banner@#{map-get($banner-sizes, small)}.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+
+  @media (min-width: $m-min-width) {
+    height: 594px;
+    background-image: url("../img/header-banner@#{map-get($banner-sizes, medium)}.jpg");
+  }
+
+  @media (min-width: $l-min-width) {
+    height: 877px;
+    background-image: url("../img/header-banner@#{map-get($banner-sizes, large)}.jpg");
+  }
+}

@@ -1,0 +1,12 @@
+mixin crystal-page-header(pageHeader_options)
+  header.crystal-page-header&attributes({
+    class: pageHeader_options.mixedClassname,
+  })
+    .crystal-page-header__container
+      ul.crystal-page-header__list
+        li.crystal-page-header__item UI / UX
+        li.crystal-page-header__item 2018
+        li.crystal-page-header__item #[span.crystal-page-header__string WayToStart] studio
+      +crystal-logo({
+        mixedClassnames: 'crystal-page-header__logo',
+      })

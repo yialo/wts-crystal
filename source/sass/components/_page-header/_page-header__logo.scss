@@ -1,0 +1,25 @@
+.crystal-page-header__logo {
+  justify-self: right;
+  align-self: center;
+  width: 300px;
+
+  @media (min-width: $s-midpoint) {
+    margin-right: calc(((100% - #{$s-midpoint}) / 2) + 10px);
+  }
+
+  @media (min-width: $m-min-width) {
+    align-self: start;
+    width: 388px;
+    margin-top: 100px;
+    margin-right: calc(((100% - #{$m-min-width}) / 2) + 10px);
+  }
+
+  @media (min-width: $m-midpoint) {
+    margin-right: 96px;
+  }
+
+  @media (min-width: $l-min-width) {
+    margin-top: 225px;
+    margin-right: 108px;
+  }
+}

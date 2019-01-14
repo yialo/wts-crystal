@@ -1,0 +1,8 @@
+.crystal-heading__list {
+  @include list;
+  display: flex;
+
+  .crystal-heading--pictures & {
+    position: relative;
+  }
+}

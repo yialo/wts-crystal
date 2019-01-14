@@ -1,0 +1,25 @@
+.crystal-page-header__item {
+  @include font(400, 16px, 16px);
+  letter-spacing: 0.1em;
+  text-align: right;
+  text-transform: uppercase;
+  color: white;
+
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: $m-min-width) {
+    &:nth-child(1) {
+      text-align: left;
+    }
+
+    &:nth-child(2) {
+      text-align: center;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+}

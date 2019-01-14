@@ -1,0 +1,76 @@
+.crystal-magazine-picture {
+  @media (min-width: ($m-midpoint + 40px)) {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: calc(100% + 40px);
+      border-style: solid;
+      border-color: $picture-borders;
+    }
+
+    &--1 {
+      &::after {
+        top: 0;
+        left: 0;
+        height: calc(100% + 32px);
+        border-width: 0 4px 0 0;
+      }
+    }
+
+    &--2 {
+      padding-top: 48px;
+
+      &::after {
+        top: 0;
+        right: -10px;
+        height: calc(100% + 32px);
+        border-width: 4px 0 0 4px;
+      }
+    }
+
+    &--3 {
+      padding-top: 48px;
+
+      &::after {
+        bottom: 0;
+        left: -10px;
+        height: calc(100% + 1px);
+        border-width: 4px 4px 0 0;
+      }
+    }
+  }
+
+  @media (min-width: $l-max-width) {
+    padding-top: 0;
+
+    &--1 {
+      &::after {
+        top: auto;
+        bottom: 28px;
+        left: calc(100% + 24px);
+        width: 394px;
+        height: 100px;
+        border-width: 4px 4px 0 0;
+      }
+    }
+
+    &--2 {
+      &::after {
+        display: none;
+      }
+    }
+
+    &--3 {
+      &::after {
+        top: -128px;
+        bottom: auto;
+        left: 388px;
+        width: 462px;
+        height: 100px;
+        border-width: 4px 0 0 4px;
+      }
+    }
+  }
+}

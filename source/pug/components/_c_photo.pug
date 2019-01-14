@@ -1,0 +1,62 @@
+//- TODO: need refactoring!
+
+mixin crystal-photo(photo_options)
+  -
+    let imageAttributes = {};
+    let photoImagePath =
+      `img/${photo_options.fileSubmane}--${photo_options.number}@`;
+  case photo_options.fileSubmane
+    when 'primary'
+      -
+        imageAttributes = {
+          src:
+            `${photoImagePath}585.jpg`,
+          alt:
+            photoImageNames_primary[photo_options.number]
+        };
+    when 'magazine'
+      -
+        imageAttributes = {
+          src:
+            `${photoImagePath}788.jpg`,
+          alt:
+            `Журнал, фото №${photo_options.number}`
+        };
+    when 'manner'
+      -
+        const mannerPhotoMaxWidth = (photo_options.number === 1) ? 775 : 788;
+        imageAttributes = {
+          src:
+            `${photoImagePath}${mannerPhotoMaxWidth}.jpg`,
+          alt:
+            `Как и с чем, фото №${photo_options.number}`
+        };
+    when 'stories'
+      -
+        imageAttributes = {
+          srcset:
+            `${photoImagePath}748.jpg 748w,` +
+            `${photoImagePath}1592.jpg 1592w`,
+          sizes:
+            `${viewportSmallMaxWidth} 748px,` +
+            '1592px',
+          src:
+            `${photoImagePath}748.jpg`,
+          alt:
+            'Сто личных историй'
+        };
+    when 'history'
+      -
+        imageAttributes = {
+          srcset:
+            `${photoImagePath}748.jpg 748w,` +
+            `${photoImagePath}983.jpg 983w`,
+          sizes:
+            `${viewportSmallMaxWidth} 748px,` +
+            '983px',
+          src:
+            `${photoImagePath}748.jpg`,
+          alt:
+            'История'
+        };
+  img.crystal-photo&attributes(imageAttributes)

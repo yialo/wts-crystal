@@ -1,0 +1,118 @@
+.crystal-picture-block__item {
+  @include margin-hor;
+
+  .crystal-picture-block--primary & {
+    max-width: 585px;
+
+    @for $value from 1 through 4 {
+      &--#{$value} {
+        @if $value % 2 != 0 {
+          margin-left: 0;
+        } @else {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .crystal-picture-block--stories & {
+    max-width: 748px;
+  }
+
+  .crystal-picture-block--history & {
+    max-width: 748px;
+    margin-left: 0;
+  }
+
+  @media (min-width: $m-min-width) {
+    .crystal-picture-block--magazine & {
+      max-width: 788px;
+
+      @for $value from 1 through 4 {
+        &--#{$value} {
+          @if $value % 2 != 0 {
+            margin-left: 0;
+          }
+        }
+      }
+
+      &--2 {
+        margin-right: 0;
+      }
+    }
+
+    .crystal-picture-block--manner & {
+      &--1 {
+        max-width: 775px;
+        margin-left: 0;
+      }
+
+      &--2 {
+        max-width: 788px;
+        margin-right: 0;
+      }
+    }
+
+    .crystal-picture-block--stories & {
+      max-width: 1592px;
+    }
+
+    .crystal-picture-block--history & {
+      max-width: 983px;
+    }
+  }
+
+  @media (min-width: $l-min-width) {
+    .crystal-picture-block--primary & {
+      &--1 {
+        margin-right: 24px;
+      }
+
+      &--2 {
+        margin-top: 182px;
+        margin-bottom: 24px;
+        margin-left: 0;
+      }
+
+      &--3 {
+        order: 1;
+        margin-right: 0;
+      }
+
+      &--4 {
+        margin-top: 182px;
+        margin-left: auto;
+        margin-right: 24px;
+      }
+    }
+  }
+
+  @media (min-width: $l-max-width) {
+    .crystal-picture-block--magazine & {
+      &--1 {
+        margin-bottom: 457px;
+      }
+
+      &--2 {
+        order: 1;
+        margin-top: 237px;
+        margin-left: 0;
+      }
+    }
+  }
+
+  @media (min-width: $l-max-width + 20px) {
+    .crystal-picture-block--manner & {
+      flex-shrink: 0;
+
+      &--1 {
+        margin-right: 0;
+      }
+
+      &--2 {
+        margin-top: 448px;
+        margin-left: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.crystal-heading__container {
+  margin-left: 10px;
+
+  @media (min-width: $s-midpoint) {
+    margin-left: $heading-margin-left-flexible;
+  }
+
+  @media (min-width: $m-min-width) {
+    margin-left: var(--textblock__container-PaddingHorizontal);
+  }
+
+  @media (min-width: $l-min-width) {
+    .crystal-heading--pictures & {
+      margin-left: 144px;
+    }
+  }
+
+  @media (min-width: ($l-max-width + $textblock-heading-margin-left-l * 2)) {
+    .crystal-heading--textblock & {
+      margin-left: calc((100% - #{$l-max-width}) / 2);
+    }
+  }
+
+  @media (min-width: ($l-max-width + 288px)) {
+    .crystal-heading--pictures & {
+      margin-left: calc((100% - #{$l-max-width}) / 2);
+    }
+  }
+}

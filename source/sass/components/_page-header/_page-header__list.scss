@@ -1,0 +1,11 @@
+.crystal-page-header__list {
+  @include list;
+  order: 1;
+
+  @media (min-width: $m-min-width) {
+    order: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
+}

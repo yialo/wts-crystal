@@ -1,0 +1,11 @@
+mixin crystal-SUBNAME-picture(bem_pictureBlock_options)
+  - const blockClass = `crystal-${bem_pictureBlock_options.subname}-picture`;
+  div(
+    class=[
+      blockClass,
+      `${blockClass}--${bem_pictureBlock_options.number}`,
+    ]
+  )&attributes({
+    class: bem_pictureBlock_options.mixedClasses,
+  })
+    block

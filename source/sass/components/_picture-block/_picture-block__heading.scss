@@ -1,0 +1,11 @@
+.crystal-picture-block__heading {
+  margin-bottom: 16px;
+
+  @media (min-width: $m-min-width) {
+    margin-bottom: 32px;
+  }
+
+  @media (min-width: $l-min-width) {
+    margin-bottom: 64px;
+  }
+}

@@ -1,0 +1,26 @@
+// ===============================================
+// Function generates numbered list for iterating.
+// ===============================================
+//
+// Arguments:
+// ----------
+// $first (integer, >= 1): start item number,
+// $last (integer, >= 1): end item number,
+// $type (string, even | odd | all): iteration type.
+//
+
+@function create-numerated-list(
+  $first: 1,
+  $last: 5,
+  $type: all,
+) {
+  $numbers: ();
+
+  @for $number from $first through $last {
+    @if ($type == odd and $number % 2 != 0) or ($type == even and $number % 2 == 0) or $type == all {
+      $numbers: append($numbers, $number);
+    }
+  }
+
+  @return $numbers;
+}

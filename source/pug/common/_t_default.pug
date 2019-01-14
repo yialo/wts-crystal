@@ -1,0 +1,64 @@
+-
+  const siteName = 'Crystal';
+  const viewportSmallMaxWidth = '(max-width: 767px)';
+  const viewportMediumMinWidth = '(min-width: 768px)';
+  const viewportMediumMaxWidth = '(max-width: 1279px)';
+  const viewportLargeMinWidth = '(min-width: 1280px)';
+  const metaData = {
+    'description':
+      'Портфолио студии WayToStart: Столичная Водка',
+    'viewport':
+      'width=device-width, initial-scale=1',
+    'cmsmagazine':
+      'cdc79537f1d9f113c73cd2fd46ca0125',
+    'author':
+      'Веб-студия WayToStart',
+  };
+  const fontFamilyName = 'gothampro';
+  const fontWeights = [
+    'regular',
+    'medium',
+    'bold',
+  ];
+  const mainElement = 'crystal-page-main__';
+
+block variables
+
+mixin setDefaults(values, defaultValues)
+  each value, key in defaultValues
+    if values[key] === undefined
+      - values[key] = defaultValues[key];
+
+include _i_data
+include _i_components
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset='utf-8')
+    title= siteName
+    each value, key in metaData
+      meta(
+        name=key
+        content=value
+      )
+    each value in fontWeights
+      link(
+        rel='preload'
+        href=`fonts/${fontFamilyName}-${value}.woff2`
+        as='font'
+        crossorigin
+      )
+    link(rel='stylesheet' href='css/main.min.css')
+  body.crystal-page
+    +crystal-page-header({
+      mixedClassname: 'crystal-page__header',
+    })
+    main.crystal-page-main.crystal-page__main
+      block page-main
+        .test
+    +crystal-page-footer({
+      mixedClassname: 'crystal-page__footer',
+    })
+      script(src='js/picturefill.js')
+      block scripts

@@ -1,0 +1,153 @@
+.crystal-primary-picture {
+  position: relative;
+  padding-top: 48px;
+
+  &::before {
+    @include font(700, 32px, 1);
+    content: counter(item-numbering);
+    position: absolute;
+    top: 0;
+    color: red;
+    counter-increment: item-numbering;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    z-index: -1;
+    width: calc(100% - 30px);
+    border-style: solid;
+    border-color: $picture-borders;
+    border-width: 4px 0 0 0;
+  }
+
+  @for $value from 1 through 4 {
+    &--#{$value} {
+      @if $value % 2 != 0 {
+        &::before {
+          left: 0;
+        }
+
+        &::after {
+          right: 0;
+        }
+      } @else {
+        &::before {
+          right: 0;
+        }
+
+        &::after {
+          left: 0;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $m-min-width) {
+    &::after {
+      width: 100%;
+      height: calc(100% + 32px);
+      border-style: solid;
+      border-color: $picture-borders;
+    }
+
+    &--4 {
+      &::after {
+        height: calc(100% - 15px);
+      }
+    }
+
+    @for $value from 1 through 4 {
+      &--#{$value} {
+        @if $value % 2 != 0 {
+          &::after {
+            left: 30px;
+            right: auto;
+            border-width: 4px 4px 0 0;
+          }
+        } @else {
+          &::after {
+            left: auto;
+            right: 30px;
+            border-width: 4px 0 0 4px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $l-min-width) {
+    padding-top: 0;
+
+    &::before {
+      top: auto;
+      left: auto;
+      right: auto;
+    }
+
+    &::after {
+      top: auto;
+      left: auto;
+      right: auto;
+    }
+
+    &--1 {
+      &::before {
+        top: calc(100% + 15px);
+        left: 0;
+      }
+
+      &::after {
+        top: 0;
+        right: 0;
+        width: calc(100% - 30px);
+        border-width: 0 0 4px 0;
+      }
+    }
+
+    &--2 {
+      &::before {
+        bottom: calc(100% + 15px);
+        right: 15px;
+      }
+
+      &::after {
+        bottom: 0;
+        left: 0;
+        width: calc(100% - 45px);
+        border-width: 4px 0 0 0;
+      }
+    }
+
+    &--3 {
+      &::before {
+        top: -4px;
+        left: -37px;
+      }
+
+      &::after {
+        top: 40px;
+        left: -28px;
+        width: 100%;
+        height: 110px;
+        border-width: 0 0 0 4px;
+      }
+    }
+
+    &--4 {
+      &::before {
+        bottom: calc(100% + 15px);
+        left: 0;
+      }
+
+      &::after {
+        bottom: 0;
+        right: 0;
+        width: calc(100% - 30px);
+        height: calc(100% + 32px);
+        border-width: 4px 0 0 0;
+      }
+    }
+  }
+}

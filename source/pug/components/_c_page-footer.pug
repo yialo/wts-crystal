@@ -1,0 +1,28 @@
+mixin crystal-page-footer(pageFooter_options)
+  footer.crystal-page-footer&attributes({
+    class: pageFooter_options.mixedClassname,
+  })
+    .crystal-page-footer__container
+      mixin crystal-page-footer__item(pageFooterItem_options)
+        li.crystal-page-footer__item(
+          class
+            =`crystal-page-footer__item--${pageFooterItem_options.modifier}`
+        )= pageFooterItem_options.text
+      mixin crystal-page-footer__list(modifier)
+        ul.crystal-page-footer__list(
+          class
+            =`crystal-page-footer__list--${modifier}`
+        )
+          -
+            const itemData = {
+              'edging':  [5, 'creator', 'WayToStart'],
+              'center': [3, 'thanks', 'Спасибо за просмотр'],
+            };
+            [itemAmount, itemModifier, itemText] = itemData[modifier];
+          - for (let i = 1; i <= itemAmount; i++)
+            +crystal-page-footer__item({
+              modifier: itemModifier,
+              text: itemText,
+            })
+      each value in ['edging', 'center', 'edging']
+        +crystal-page-footer__list(value)
