@@ -23,8 +23,7 @@ mixin crystal-picture-block(pictureblock_options)
               modifier: pictureblock_options.modifier,
               number: pictureBlockItem_options.number,
             })
-        - let i = 0;
-        while i < pictureblock_options.imagesAmount
+        - for (let i = 0; i < pictureblock_options.imagesAmount; i++)
           +crystal-picture-block__item({
-            number: i++,
+            number: i,
           })

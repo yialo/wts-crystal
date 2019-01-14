@@ -1,7 +1,4 @@
 .crystal-picture-block__item {
-  $odd-items: (1, 3);
-  $even-items: (2, 4);
-
   @include margin-hor;
 
   .crystal-picture-block--primary & {

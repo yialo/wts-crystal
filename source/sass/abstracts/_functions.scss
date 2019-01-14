@@ -1,17 +1,18 @@
-/*
-Function generates numbered list for iteratin.
-
-Arguments:
-
-$first (integer, >= 1): start item number,
-$last (integer, >= 1): end item number,
-$type (string, even | odd | all): iteration type.
-*/
+// ===============================================
+// Function generates numbered list for iterating.
+// ===============================================
+//
+// Arguments:
+// ----------
+// $first (integer, >= 1): start item number,
+// $last (integer, >= 1): end item number,
+// $type (string, even | odd | all): iteration type.
+//
 
 @function create-numerated-list(
-  $first,
-  $last,
-  $type,
+  $first: 1,
+  $last: 5,
+  $type: all,
 ) {
   $numbers: ();
 
