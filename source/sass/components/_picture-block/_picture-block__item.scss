@@ -100,4 +100,19 @@
       }
     }
   }
+
+  @media (min-width: $l-max-width + 20px) {
+    .crystal-picture-block--manner & {
+      flex-shrink: 0;
+
+      &--1 {
+        margin-right: 0;
+      }
+
+      &--2 {
+        margin-top: 448px;
+        margin-left: 0;
+      }
+    }
+  }
 }
