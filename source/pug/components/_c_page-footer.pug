@@ -18,7 +18,7 @@ mixin crystal-page-footer(pageFooter_options)
               'edging':  [5, 'creator', 'WayToStart'],
               'center': [3, 'thanks', 'Спасибо за просмотр'],
             };
-            [itemAmount, itemModifier, itemText] = itemData[modifier];
+            let [itemAmount, itemModifier, itemText] = itemData[modifier];
           - for (let i = 1; i <= itemAmount; i++)
             +crystal-page-footer__item({
               modifier: itemModifier,
