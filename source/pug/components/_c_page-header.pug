@@ -10,3 +10,13 @@ mixin crystal-page-header(pageHeader_options)
       +crystal-logo({
         mixedClassnames: 'crystal-page-header__logo',
       })
+    .crystal-page-header__video-container
+      video.crystal-page-header__video(
+        autoplay
+        height='352'
+        loop
+      )
+        source(
+          src=`${assetsPath}video/crystal-video.mp4`
+          type='video/mp4'
+        )

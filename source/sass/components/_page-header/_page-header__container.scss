@@ -1,6 +1,8 @@
 .crystal-page-header__container {
   @include margin-hor;
   @include padding-hor;
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-rows: 1fr auto;
   height: 100%;

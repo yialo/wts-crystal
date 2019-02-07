@@ -2,7 +2,7 @@ mixin crystal-photo(photo_options)
   -
     let imageAttributes = {};
     let photoImagePath =
-      `img/${photo_options.fileSubmane}--${photo_options.number}@`;
+      `${assetsPath}img/${photo_options.fileSubmane}--${photo_options.number}@`;
   case photo_options.fileSubmane
     when 'primary'
       -
