@@ -4,7 +4,7 @@
     "last 2 versions"
   ],
   "dependencies": {
-    "acorn": "6.0.7",
+    "acorn": "6.1.0",
     "mkdirp": "0.5.1"
   },
   "description": "WayToStart portfolio: Crystal Vodka",
