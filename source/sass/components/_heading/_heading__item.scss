@@ -83,7 +83,7 @@
 
   @media (min-width: $m-min-width) {
     max-width: map-get($min-content-width, medium);
-    font-size: 48px;
+    font-size: 40px;
 
     .crystal-heading--textblock & {
       &:not(:last-child) {

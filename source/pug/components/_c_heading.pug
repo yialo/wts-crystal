@@ -1,31 +1,33 @@
 mixin crystal-heading(heading_options)
-    -
-      let specialModifierClassname =
-        (heading_options.generalModifier === 'pictures') ? {
-            class: `crystal-heading--${heading_options.generalModifier}_${heading_options.specialModifier}`,
-          } : '';
-    header.crystal-heading(
-      class=[
-        `crystal-heading--${heading_options.generalModifier}`,
-        `crystal-heading--${heading_options.generalModifier}_${heading_options.specialModifier}`,
-        heading_options.mixedClasses,
-      ]
-    )
-      .crystal-heading__container
-        mixin crystal-heading__item(headingItem_options)
-          if headingItem_options.mark === 'mainline'
-            li.crystal-heading__item
-              h2.crystal-heading__mainline= headingItem_options.text
+  -
+    const {
+      generalModifier,
+      specialModifier,
+      mixedClasses,
+      text
+    } = heading_options;
+    const mainlineData = { 'textblock': [5, 1], 'pictures': [20, 3] };
+  header.crystal-heading(class=[
+    `crystal-heading--${generalModifier}`,
+    `crystal-heading--${generalModifier}_${specialModifier}`,
+    mixedClasses,
+  ])
+    .crystal-heading__container
+      mixin crystal-heading__item(headingItem_options)
+        - const { mark, text } = headingItem_options;
+        if mark === 'mainline'
+          li.crystal-heading__item
+            h2.crystal-heading__mainline= text
+        else
+          li.crystal-heading__item= text
+      ul.crystal-heading__list
+        -
+          const [
+            itemAmount,
+            mainlineItemNumber,
+          ] = mainlineData[generalModifier];
+        - for (let i = 1; i <= itemAmount; i++)
+          if i === mainlineItemNumber
+            +crystal-heading__item({ text: text, mark: 'mainline' })
           else
-            li.crystal-heading__item= headingItem_options.text
-        ul.crystal-heading__list
-          - for (let i = 1; i <= 20; i++)
-            if heading_options.generalModifier === 'textblock' && i === 1 || heading_options.generalModifier === 'pictures' && i === 3
-              +crystal-heading__item({
-                text: heading_options.text,
-                mark: 'mainline',
-              })
-            else
-              +crystal-heading__item({
-                text: heading_options.text,
-              })
+            +crystal-heading__item({ text: text })
