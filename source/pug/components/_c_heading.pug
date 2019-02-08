@@ -6,7 +6,12 @@ mixin crystal-heading(heading_options)
       mixedClasses,
       text
     } = heading_options;
-    const mainlineData = { 'textblock': [5, 1], 'pictures': [20, 3] };
+    const picturesMainlineData = [20, 3];
+    const textblockMainlineData = {
+      'task': [5, 1],
+      'design': [4, 1],
+      'development': [5, 1],
+    };
   header.crystal-heading(class=[
     `crystal-heading--${generalModifier}`,
     `crystal-heading--${generalModifier}_${specialModifier}`,
@@ -21,11 +26,16 @@ mixin crystal-heading(heading_options)
         else
           li.crystal-heading__item= text
       ul.crystal-heading__list
-        -
-          const [
-            itemAmount,
-            mainlineItemNumber,
-          ] = mainlineData[generalModifier];
+        - let itemAmount, mainlineItemNumber;
+        case generalModifier
+          when 'textblock'
+            -
+              [
+                itemAmount,
+                mainlineItemNumber,
+              ] = textblockMainlineData[specialModifier];
+          when 'pictures'
+            - [itemAmount, mainlineItemNumber] = picturesMainlineData;
         - for (let i = 1; i <= itemAmount; i++)
           if i === mainlineItemNumber
             +crystal-heading__item({ text: text, mark: 'mainline' })
