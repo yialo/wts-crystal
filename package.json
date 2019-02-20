@@ -9,10 +9,10 @@
   },
   "description": "WayToStart portfolio: Crystal Vodka",
   "devDependencies": {
-    "autoprefixer": "9.4.7",
+    "autoprefixer": "9.4.8",
     "browser-sync": "2.26.3",
     "del": "3.0.0",
-    "eslint": "5.13.0",
+    "eslint": "5.14.1",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.16.0",
     "gulp": "4.0.0",
@@ -41,7 +41,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/alekseiarrowaytostart/wts-crystal/"
+    "url": "git+https://bitbucket.org/alekseiarrowaytostart/wts-crystal/"
   },
   "scripts": {
     "build": "gulp build",
