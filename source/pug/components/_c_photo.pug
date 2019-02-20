@@ -10,7 +10,7 @@ mixin crystal-photo(photo_options)
           src:
             `${photoImagePath}585.jpg`,
           alt:
-            photoImageNames_primary[photo_options.number]
+            photoImageNames_primary[photo_options.number - 1]
         };
     when 'magazine'
       -
