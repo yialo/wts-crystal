@@ -47,7 +47,7 @@
     "build": "gulp build",
     "eslint": "eslint \"app/js/**/*.js\"",
     "start": "npm run build && gulp serve",
-    "stylelint": "stylelint \"app/sass/**/*.scss\" --syntax scss",
+    "stylelint": "stylelint \"app/**/*.scss\" --syntax scss",
     "test": "npm run stylelint && npm run eslint"
   },
   "version": "1.0.0"

@@ -1,2 +1,4 @@
-build/css/
+*.js
+build/
+node_modules/
 source/sass/vendors/
